@@ -1,4 +1,7 @@
 BarcheckOrg::Application.routes.draw do
+  resources :bars
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
