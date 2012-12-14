@@ -1,5 +1,5 @@
 module BarsHelper
-	def iframe_url(tour)
-		tour.url + "&output=embed"
+	def iframe_url(bar)
+		bar.address + "&output=embed"
 	end
 end
