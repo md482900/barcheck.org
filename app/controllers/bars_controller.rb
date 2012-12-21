@@ -3,6 +3,7 @@ class BarsController < ApplicationController
   # GET /bars.json
   def index
     @bars = Bar.all
+    
 
     respond_to do |format|
       format.html # index.html.erb

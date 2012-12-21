@@ -1,0 +1,23 @@
+<header>
+	<div id="logo">Barcheck.org</div>
+</header>
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a href="/bars">Home</a></li>
+      <li><a href="/bars/new">Bar erstellen</a></li>
+
+      <% if current_user %>
+      <li><%= link_to 'Abmelden', destroy_user_session_path, method: :delete %></li>
+  </ul>
+      <ul class="nav pull-right"><li><a>Willkommen, <%= current_user.email %> !</a></li></ul>
+      <% else %>
+  <ul class="nav">
+      <li><%= link_to 'Login', new_user_session_path %></li>
+      <li><%= link_to 'Registrieren', new_user_registration_path %></li>
+      <% end %>
+    </ul>
+
+  </div>
+</div>

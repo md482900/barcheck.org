@@ -34,4 +34,7 @@ BarcheckOrg::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Configure ActionMailer
+  config.action_mailer.default_url_option = { :host => 'localhost:3000'}
 end
