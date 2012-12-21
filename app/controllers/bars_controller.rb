@@ -81,4 +81,11 @@ class BarsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def thetime
+    @current_time = Time.now
+  end
+
+
+
+
 end
