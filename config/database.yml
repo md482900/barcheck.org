@@ -8,6 +8,9 @@ development:
   database: db/development.sqlite3
   pool: 5
   timeout: 5000
+  host:localhost
+  username: ruby
+  password: 12345
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
