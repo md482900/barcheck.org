@@ -17,6 +17,7 @@ class BarsController < ApplicationController
   def show
     @bar = Bar.find(params[:id])
 
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @bar }
@@ -42,7 +43,8 @@ class BarsController < ApplicationController
   # POST /bars
   # POST /bars.json
   def create
-    @bar = Bar.new(params[:bar])
+   # @bar = Bar.new(params[:bar])
+    @bar = Bar.create(params[:bar])
 
     respond_to do |format|
       if @bar.save

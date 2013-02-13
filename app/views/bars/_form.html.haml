@@ -1,4 +1,4 @@
-= form_for @bar do |f|
+= form_for @bar, :html => {:multipart => true} do |f|
   - if @bar.errors.any?
     #error_explanation
       %h2= "#{pluralize(@bar.errors.count, "error")} prohibited this bar from being saved:"
@@ -20,6 +20,6 @@
     = f.text_field :address
   .field
     = f.label :picture
-    = f.text_field :picture
+    = f.file_field :picture
   .actions
     = f.submit 'Save'

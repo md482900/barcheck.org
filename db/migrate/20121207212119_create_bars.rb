@@ -5,7 +5,6 @@ class CreateBars < ActiveRecord::Migration
       t.integer :vote
       t.text :description
       t.string :address
-      t.string :picture
 
       t.timestamps
     end
