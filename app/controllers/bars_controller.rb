@@ -2,9 +2,9 @@ class BarsController < ApplicationController
   # GET /bars
   # GET /bars.json
   def index
-    @bars = Bar.all
+    @q  = Bar.search(params[:q])
+    @bars = @q.result(:distinct => true)
     
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bars }
@@ -83,5 +83,9 @@ class BarsController < ApplicationController
       format.html { redirect_to bars_url }
       format.json { head :no_content }
     end
+  end
+  def search
+    index
+    render :index
   end
 end
