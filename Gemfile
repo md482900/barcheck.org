@@ -4,7 +4,7 @@ gem 'rails', '3.2.9'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'devise'
-gem "paperclip", "~> 3.0"
+gem 'paperclip'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
