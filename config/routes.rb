@@ -1,4 +1,6 @@
 BarcheckOrg::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
   devise_for :users
 
   resources :bars do

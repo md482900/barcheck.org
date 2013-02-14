@@ -5,6 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.delete_all
+
 Category.create(:name => 'Ambience', vote: nil )
 Category.create(:name => 'Service', vote: nil )
 Category.create(:name => 'Price', vote: nil)
+
+pass = SecureRandom.hex(5)
+admin = User.create email: 'm4nhthangdo@gmail.com', password: 'manni@admin'
+admin.add_role :admin
