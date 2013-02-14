@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'paperclip'
 gem 'ransack'
+gem 'rolify'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
