@@ -8,6 +8,7 @@ gem 'paperclip'
 gem 'ransack'
 gem 'rolify'
 gem 'activeadmin'
+gem 'libv8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

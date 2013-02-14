@@ -110,6 +110,7 @@ GEM
     less-rails (2.2.6)
       actionpack (>= 3.1)
       less (~> 2.2.0)
+    libv8 (3.11.8.13)
     listen (0.6.0)
     lumberjack (1.0.2)
     mail (2.4.4)
@@ -229,6 +230,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   less-rails
+  libv8
   paperclip
   pg
   rails (= 3.2.9)
