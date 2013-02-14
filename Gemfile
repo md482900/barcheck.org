@@ -8,7 +8,7 @@ gem 'paperclip'
 gem 'ransack'
 gem 'rolify'
 gem 'activeadmin'
-gem 'libv8'
+#gem 'libv8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -16,6 +16,7 @@ gem 'libv8'
 
 
 group :development, :test do
+  gem 'sqlite3'
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
 	gem 'guard-rspec'
@@ -26,9 +27,9 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 
-group :production do
-  gem 'pg'
-end
+#group :production do
+ # gem 'pg'
+#end
 
 
 group :assets do
