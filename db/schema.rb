@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20130214124645) do
     t.integer  "vote"
     t.text     "description"
     t.string   "address"
-    t.string   "picture"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.string   "picture_file_name"

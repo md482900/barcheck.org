@@ -11,6 +11,5 @@ Category.create(:name => 'Ambience', vote: nil )
 Category.create(:name => 'Service', vote: nil )
 Category.create(:name => 'Price', vote: nil)
 
-pass = SecureRandom.hex(5)
-admin = User.create email: 'm4nhthangdo@gmail.com', password: 'manni@admin'
+admin = User.create email: 'admin@test.org', password: 'admin@test'
 admin.add_role :admin

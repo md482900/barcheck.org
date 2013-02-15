@@ -1,14 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
-gem 'haml-rails'
-gem 'jquery-rails'
-gem 'devise'
-gem 'paperclip'
-gem 'ransack'
-gem 'rolify'
-gem 'activeadmin'
-#gem 'libv8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -21,7 +12,16 @@ group :development, :test do
 	gem 'factory_girl_rails'
 	gem 'guard-rspec'
 	gem 'faker'
-  gem 'therubyracer', '~> 0.11.0'
+  gem 'rails', '3.2.9'
+  gem 'haml-rails'
+  gem 'jquery-rails'
+  gem 'devise'
+  gem 'paperclip'
+  gem 'ransack'
+  gem 'rolify'
+  gem 'activeadmin'
+  gem 'libv8'
+  gem 'less'
 end
 
 # Gems used only for assets and not required
@@ -36,7 +36,12 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'twitter-bootstrap-rails'
-  gem 'less-rails'
+  gem 'less-rails-bootstrap' 
+  gem 'therubyracer' 
+  gem 'jquery-rails'
+
+ 
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
