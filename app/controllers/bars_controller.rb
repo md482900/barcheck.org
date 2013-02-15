@@ -2,7 +2,12 @@ class BarsController < ApplicationController
   # GET /bars
   # GET /bars.json
   def index
-    @bars = Bar.all
+    @search = Bar.ransack(params[:q])
+    if params[:q].nil?
+      @bars = Bar.all
+    else
+      @bars = @search.result(:distinct => true).order("created_at desc")
+    end
     
     respond_to do |format|
       format.html # index.html.erb

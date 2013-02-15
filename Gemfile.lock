@@ -238,6 +238,7 @@ DEPENDENCIES
   less
   less-rails-bootstrap
   libv8
+  meta_search
   paperclip
   rails (= 3.2.9)
   ransack

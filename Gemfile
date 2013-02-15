@@ -1,5 +1,15 @@
 source 'https://rubygems.org'
-
+ gem 'rails', '3.2.9'
+  gem 'haml-rails'
+  gem 'jquery-rails'
+  gem 'devise'
+  gem 'paperclip'
+  gem 'ransack'
+  gem 'rolify'
+  gem 'activeadmin'
+  gem 'libv8'
+  gem 'less'
+  gem 'meta_search'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -12,16 +22,7 @@ group :development, :test do
 	gem 'factory_girl_rails'
 	gem 'guard-rspec'
 	gem 'faker'
-  gem 'rails', '3.2.9'
-  gem 'haml-rails'
-  gem 'jquery-rails'
-  gem 'devise'
-  gem 'paperclip'
-  gem 'ransack'
-  gem 'rolify'
-  gem 'activeadmin'
-  gem 'libv8'
-  gem 'less'
+ 
 end
 
 # Gems used only for assets and not required

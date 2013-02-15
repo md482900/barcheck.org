@@ -3,11 +3,7 @@ BarcheckOrg::Application.routes.draw do
 
   devise_for :users
 
-  resources :bars do
-    collection do
-      match 'search' => 'bars#search', :via =>[:get, :post], :as => :search
-    end
-  end
+  resources :bars
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
