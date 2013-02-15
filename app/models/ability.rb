@@ -34,8 +34,8 @@ class Ability
                 can :manage, :all
             #Registered users
             else
-                can :create, :bar
                 can :read, :all
+                can :create, Bar
             end
 
             #Guest user
