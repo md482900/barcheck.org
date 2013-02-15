@@ -9,7 +9,8 @@ source 'https://rubygems.org'
   gem 'activeadmin'
   gem 'libv8'
   gem 'less'
-  gem 'meta_search'
+  #gem 'meta_search'
+  gem 'cancan'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -22,6 +23,7 @@ group :development, :test do
 	gem 'factory_girl_rails'
 	gem 'guard-rspec'
 	gem 'faker'
+  gem 'pry'
  
 end
 

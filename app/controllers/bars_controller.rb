@@ -1,20 +1,44 @@
 class BarsController < ApplicationController
+  load_and_authorize_resource
   # GET /bars
   # GET /bars.json
+
+
   def index
     @search = Bar.ransack(params[:q])
+
     if params[:q].nil?
       @bars = Bar.all
     else
       @bars = @search.result(:distinct => true).order("created_at desc")
     end
-    
+   # binding.pry
+    if @bars.count > 1
+      @bars.each do |bar|
+         bar.name
+      end
+    end
+
+
+    #binding.pry
+    if @bars.count == 1
+      redirect_to @bars.first
+    else
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bars }
-      
+      end
     end
   end
+
+
+
+
+
+
+
+
 
   # GET /bars/1
   # GET /bars/1.json

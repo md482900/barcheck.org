@@ -48,6 +48,7 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.0.4)
+    cancan (1.6.9)
     cocaine (0.4.2)
     coderay (1.0.8)
     coffee-rails (3.2.2)
@@ -228,6 +229,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  cancan
   coffee-rails (~> 3.2.1)
   devise
   factory_girl_rails
@@ -238,8 +240,8 @@ DEPENDENCIES
   less
   less-rails-bootstrap
   libv8
-  meta_search
   paperclip
+  pry
   rails (= 3.2.9)
   ransack
   rolify

@@ -1,14 +1,20 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <ul class="nav">
-    <li><a href="/bars">Home</a></li>
+    <li><a href="/pages/index">Home</a></li>
+
     <li><a href="/bars/new">Bar erstellen</a></li>
   </ul>
   <ul class="nav pull-right">
     <li class="divider-vertical"></li>
     <form class="navbar-search pull-left">
-     
-    </form>
+      <%= search_form_for @search || Bar.ransack(params[:q]), :url => bars_path, :html => {:method => :post}  do |f| %>
+      <div class="field" >
+        <%= f.label :name_cont, "Suche" %>
+        <%= f.text_field :name_cont %>
+      </div>
+      <% end %>
+  </form>
     <li class="divider-vertical"></li>
   </ul>
   <ul class="nav">

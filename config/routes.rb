@@ -1,4 +1,6 @@
 BarcheckOrg::Application.routes.draw do
+  get "pages/index"
+
   ActiveAdmin.routes(self)
 
   devise_for :users
@@ -53,7 +55,7 @@ BarcheckOrg::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'bars#index'
+   root :to => 'pages#index'
 
   # See how all your routes lay out with "rake routes"
 

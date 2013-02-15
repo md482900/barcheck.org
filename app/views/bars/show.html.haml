@@ -20,10 +20,11 @@
 %p
   %iframe{ width: 1000, height: 500, frameborder: 0, scrolling: 'no', marginheight: 0, marginwidth: 0, src: iframe_url(@bar) }
 
-/- if can? :update, @bar
-= link_to 'Edit', edit_bar_path(@bar)
+- if can? :update, @bar
+  = link_to 'Edit', edit_bar_path(@bar)
+
 \|  
 = link_to 'Back', bars_path
 \|
-/- if can? :destroy, @bar
-= link_to 'Destroy', @bar, method: :delete, data: { confirm: 'Are you sure?'}
+- if can? :destroy, @bar
+  = link_to 'Destroy', @bar, method: :delete, data: { confirm: 'Are you sure?'}
