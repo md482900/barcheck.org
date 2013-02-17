@@ -12,12 +12,7 @@ class BarsController < ApplicationController
     else
       @bars = @search.result(:distinct => true).order("created_at desc")
     end
-   # binding.pry
-    if @bars.count > 1
-      @bars.each do |bar|
-         bar.name
-      end
-    end
+
 
 
     #binding.pry

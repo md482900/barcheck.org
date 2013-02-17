@@ -6,7 +6,7 @@
 
   <article>
     	<% @bars.each do |bar| %>
-    		<%= bar.name %></br>
+    		<%=link_to(bar.name)%></br>
     	<% end %>
   </article>
 
