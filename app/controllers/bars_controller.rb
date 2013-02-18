@@ -104,7 +104,7 @@ class BarsController < ApplicationController
   end
 
   def like
-    @current_user = User.first
+    @current_user = User.find(params[:id])
     @bar = Bar.find(params[:id])
 
     if @current_user.flagged?(@bar, :like)

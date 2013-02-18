@@ -4,17 +4,16 @@
   %b
   = @bar.name
 %p
+  %b
   = flash[:notice]
 
-%p
-  %b Vote:
-  = @bar.vote
+
 %p
   %b Description:
   = @bar.description
 
 %p
-  %b Picture:
+  %b Picture: 
   = image_tag @bar.picture.url
 
 %p

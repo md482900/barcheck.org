@@ -3,9 +3,24 @@
 <header>
   <div id="logo">Barcheck.org</div>
 </header>
+<b>Deine Suche erzielt folgende Treffer:</b></br>
+<b>
 <% @bars.each do |bar| %>
    <%=link_to(bar.name, bar_path(bar))%></br>
 <% end %>
+</b>
 
-
+<td><%= Categoy.all.each do |category| %>
+        <td><%= category.name %></td>
+        <td>
+         <ul class="rating">
+         <% form_id = "category_#{category.id}_rating" %>
+         <% form_for category.ratings.last || category.ratings.build, :html=>{:id => "category_#{category.id}_rating", :class => "star_rating_form"} do |f| %>
+            <%= f.hidden_field :category_id %>
+            <%=f.hidden_field :star, :id =>"#{form_id}_stars" %>
+         <% end %>
+            <%(1..5).each do |i| %>
+             <li class="rating_star" data-stars = "<%= i %>" data-form-id="<%= form_id %>"  id = "<%= #{form_id}_#{i}%>"></li>
+          <% end %>
+<%end%>
 
