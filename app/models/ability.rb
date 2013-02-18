@@ -36,6 +36,7 @@ class Ability
             else
                 can :create, Bar
                 can :read, :all
+                can :like, Bar
             end
 
             #Guest user

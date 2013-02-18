@@ -3,8 +3,10 @@ class BarsController < ApplicationController
   # GET /bars
   # GET /bars.json
 
-
   def index
+
+    #binding.pry
+
     @search = Bar.ransack(params[:q])
 
     if params[:q].nil?
@@ -26,13 +28,6 @@ class BarsController < ApplicationController
       end
     end
   end
-
-
-
-
-
-
-
 
 
   # GET /bars/1
@@ -107,4 +102,25 @@ class BarsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def like
+    @current_user = User.first
+    @bar = Bar.find(params[:id])
+
+    if @current_user.flagged?(@bar, :like)
+      #We already likes this
+      @current_user.unflag(@bar, :like)
+      msg = "Dir gefaehlt die Location nicht mehr"
+    else
+      #We don't like this yet
+      @current_user.flag(@bar, :like)
+      msg = "Dir gefaehlt die Location"
+    end
+
+    redirect_to bar_path, :notice => msg
+  end
+
+
+
+
 end
