@@ -9,9 +9,10 @@ source 'https://rubygems.org'
   gem 'activeadmin'
   gem 'libv8'
   gem 'less'
-  #gem 'meta_search'
   gem 'cancan'
-
+  
+  #used to create Like
+  gem 'make_flaggable', :git => 'git://github.com/cavneb/make_flaggable.git'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

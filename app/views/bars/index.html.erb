@@ -3,10 +3,9 @@
 <header>
   <div id="logo">Barcheck.org</div>
 </header>
+<% @bars.each do |bar| %>
+   <%=link_to(bar.name, bar_path(bar))%></br>
+<% end %>
 
-  <article>
-    	<% @bars.each do |bar| %>
-    		<%=link_to(bar.name)%></br>
-    	<% end %>
-  </article>
+
 
