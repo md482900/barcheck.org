@@ -6,14 +6,12 @@
     <li><a href="/bars/new">Bar erstellen</a></li>
   </ul>
   <ul class="nav pull-right">
-    <li class="divider-vertical"></li>
       <%= search_form_for @search || Bar.ransack(params[:q]), :url => bars_path do |f| %>
       <div class="field" >
         <%= f.label :name_cont, "Suche" %>
         <%= f.text_field :name_cont %>
       </div>
       <% end %>
-    <li class="divider-vertical"></li>
   </ul>
   <ul class="nav">
       <% if current_user %>
