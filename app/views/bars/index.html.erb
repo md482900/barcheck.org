@@ -3,9 +3,17 @@
 <header>
   <div id="logo">Barcheck.org</div>
 </header>
-<% @bars.each do |bar| %>
-   <%=link_to(bar.name, bar_path(bar))%></br>
+<% if @bar.blank? %>
+	<h3>Deine Suche erziehlt leider kein Treffer</h3>
+<% else %>
+	<h3>Deine Suche erziehlt folgende Treffer</h3>
+	<h4>
+		<% @bars.each do |bar| %>
+		   <%=link_to(bar.name, bar_path(bar))%></br>
+		<% end %>
+	</h4>
 <% end %>
+
 
 
 
