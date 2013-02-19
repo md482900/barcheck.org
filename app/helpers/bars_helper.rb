@@ -9,7 +9,7 @@ module BarsHelper
 
 		if user.flagged?(bar, :like)
 			#We already like it
-			link_to "Unlike", like_bar_path(bar)
+			link_to "Dislike", like_bar_path(bar)
 		else
 			#We don't like it yet
 			link_to "Like", like_bar_path(bar)
