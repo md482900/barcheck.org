@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/anton-zaytsev/acts_as_rateable.git
+  revision: 01066eceb2d16e35be437b7392cc3375f1f377f7
+  specs:
+    acts_as_rateable (3.0.0)
+
+GIT
   remote: git://github.com/cavneb/make_flaggable.git
   revision: 1b09b3bb8a778b5a8f7250c587d59a8e6c205be6
   specs:
@@ -236,6 +242,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  acts_as_rateable!
   cancan
   coffee-rails (~> 3.2.1)
   devise

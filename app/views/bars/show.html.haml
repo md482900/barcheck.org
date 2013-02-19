@@ -4,6 +4,7 @@
   = @bar.name
 %p
   %h3= flash[:notice]
+
   
 /Weiter arbeiten!!!
 /%p
@@ -21,8 +22,15 @@
 /          %li.rating_star{"data-form-id" => form_id, "data-stars" => i, :id => '#{form_id}_#{i}'}
 
 %p
+  #star-ratings-block
+  = render :partial => "rating/rating", :locals => { :asset => @asset }
+
+%p
   %b Description:
   = @bar.description
+%p
+  = "#{@liker} Person gefaehlt die Location"
+  
 
 %p
   %b Picture: 

@@ -10,6 +10,12 @@ source 'https://rubygems.org'
   gem 'libv8'
   gem 'less'
   gem 'cancan'
+
+  #Acts_as_rateable is a plugin
+  # It makes activerecord models rateable 
+  #through a polymorphic association and optionally 
+  #logs which user rated which model
+  gem "acts_as_rateable", :git => "git://github.com/anton-zaytsev/acts_as_rateable.git"
   
   #used to create Like
   gem 'make_flaggable', :git => 'git://github.com/cavneb/make_flaggable.git'

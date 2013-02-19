@@ -105,17 +105,25 @@ class BarsController < ApplicationController
 
 
   def like
+    @liker = 0
     @current_user = current_user
     @bar = Bar.find(params[:id])
 
     if @current_user.flagged?(@bar, :like)
+      
       #We already likes this
       @current_user.unflag(@bar, :like)
       msg = "Dir gefaehlt die Location nicht mehr"
+      @liker -= 1
+      if @liker < 1
+        @liker = 0
+      end
+
     else
       #We don't like this yet
       @current_user.flag(@bar, :like)
       msg = "Dir gefaehlt die Location"
+      @liker += 1
     end
 
     redirect_to bar_path, :notice => msg
