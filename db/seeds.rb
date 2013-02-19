@@ -13,3 +13,4 @@ Category.create(:name => 'Price', vote: nil)
 
 admin = User.create email: 'admin@test.org', password: 'admin@test'
 admin.add_role :admin
+User.create("email"=>"testdude@test.de")

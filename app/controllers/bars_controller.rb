@@ -17,7 +17,7 @@ class BarsController < ApplicationController
 
 
 
-    #binding.pry
+    binding.pry
     if @bars.count == 1
       redirect_to @bars.first
     else

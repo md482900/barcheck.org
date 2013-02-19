@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130217002435) do
+ActiveRecord::Schema.define(:version => 20130219000533) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20130217002435) do
     t.datetime "picture_updated_at"
   end
 
+  add_index "bars", ["name", "address"], :name => "index_bars_on_name_and_address", :unique => true
+
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.integer  "vote"
@@ -62,6 +64,16 @@ ActiveRecord::Schema.define(:version => 20130217002435) do
   add_index "flaggings", ["flag", "flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], :name => "access_flag_flaggings"
   add_index "flaggings", ["flaggable_type", "flaggable_id"], :name => "index_flaggings_on_flaggable_type_and_flaggable_id"
   add_index "flaggings", ["flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], :name => "access_flaggings"
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "rating",                      :default => 0
+    t.datetime "created_at",                                  :null => false
+    t.string   "rateable_type", :limit => 15, :default => "", :null => false
+    t.integer  "rateable_id",                 :default => 0,  :null => false
+    t.integer  "user_id",                     :default => 0,  :null => false
+  end
+
+  add_index "ratings", ["user_id"], :name => "fk_ratings_user"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
