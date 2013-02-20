@@ -9,11 +9,18 @@
   %b Description:
   = @bar.description
 
+
+%p
+  - for category in Category.all
+    = category.name
+    = render_stars(category.rating)
+
   /Like Button
 %p  
+  %h3#notice= notice
   - if @current_user.present?
     = toggle_like_button(@bar, @current_user)
-    %h3#notice= notice
+
 
 %p
   = image_tag @bar.picture.url
