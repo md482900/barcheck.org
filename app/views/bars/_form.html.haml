@@ -18,8 +18,14 @@
   .field
     = f.label :address
     = f.text_field :address
-  .fiel_field
-    = f.label :picture
-    = f.file_field :picture
+
+  - f.fields_for :images do |builder|
+  - if builder.object.new_record?
+    = builder.label :photo
+    = builder.file_field :photo
+
+  /.fiel_field
+  /  = f.label :picture
+  /  = f.file_field :picture
   .actions
     = f.submit 'Save'

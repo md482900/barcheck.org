@@ -28,16 +28,19 @@ class BarsController < ApplicationController
   # GET /bars/new.json
   def new
     @bar = Bar.new
-
+    3.times {@bar.images.build}
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @bar }
+
     end
   end
 
   # GET /bars/1/edit
   def edit
     @bar = Bar.find(params[:id])
+    3.times {@bar.images.build}
   end
 
   # POST /bars
