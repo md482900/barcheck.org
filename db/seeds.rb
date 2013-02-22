@@ -7,10 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.delete_all
 
-Category.create(:name => 'Ambience', vote: nil )
-Category.create(:name => 'Service', vote: nil )
-Category.create(:name => 'Price', vote: nil)
+Category.create(:name => 'Ambience' )
+Category.create(:name => 'Service')
+Category.create(:name => 'Price')
 
-admin = User.create email: 'admin@test.org', password: 'admin@test'
+admin = User.create user_name:'admin', email: 'admin@test.org', password: 'admin@test'
 admin.add_role :admin
-User.create("email"=>"testdude@test.de")
+
+user = User.create user_name:'Tester', email: 'testDude@test.de', password: 'test123'
+user.add_role :user

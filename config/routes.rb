@@ -1,10 +1,13 @@
 BarcheckOrg::Application.routes.draw do
+  match '/rate' => 'rater#create', :as => 'rate'
+
   get "pages/index"
 
   ActiveAdmin.routes(self)
 
   devise_for :users
 
+  resources :comments
   resources :bars do
       member do
         get 'like'

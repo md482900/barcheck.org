@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130219000533) do
+ActiveRecord::Schema.define(:version => 20130222010718481) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -41,11 +41,19 @@ ActiveRecord::Schema.define(:version => 20130219000533) do
     t.datetime "picture_updated_at"
   end
 
-  add_index "bars", ["name", "address"], :name => "index_bars_on_name_and_address", :unique => true
-
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.integer  "vote"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.text     "body"
+    t.string   "user_name"
+    t.string   "bar_name"
+    t.integer  "bar_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -65,15 +73,30 @@ ActiveRecord::Schema.define(:version => 20130219000533) do
   add_index "flaggings", ["flaggable_type", "flaggable_id"], :name => "index_flaggings_on_flaggable_type_and_flaggable_id"
   add_index "flaggings", ["flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], :name => "access_flaggings"
 
-  create_table "ratings", :force => true do |t|
-    t.integer  "rating",                      :default => 0
-    t.datetime "created_at",                                  :null => false
-    t.string   "rateable_type", :limit => 15, :default => "", :null => false
-    t.integer  "rateable_id",                 :default => 0,  :null => false
-    t.integer  "user_id",                     :default => 0,  :null => false
+  create_table "rates", :force => true do |t|
+    t.integer  "rater_id"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.float    "stars",         :null => false
+    t.string   "dimension"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
-  add_index "ratings", ["user_id"], :name => "fk_ratings_user"
+  add_index "rates", ["rateable_id", "rateable_type"], :name => "index_rates_on_rateable_id_and_rateable_type"
+  add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
+
+  create_table "rating_caches", :force => true do |t|
+    t.integer  "cacheable_id"
+    t.string   "cacheable_type"
+    t.float    "avg",            :null => false
+    t.integer  "qty",            :null => false
+    t.string   "dimension"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "rating_caches", ["cacheable_id", "cacheable_type"], :name => "index_rating_caches_on_cacheable_id_and_cacheable_type"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -99,6 +122,7 @@ ActiveRecord::Schema.define(:version => 20130219000533) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "user_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
