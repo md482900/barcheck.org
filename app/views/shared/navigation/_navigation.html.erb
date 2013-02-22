@@ -8,7 +8,7 @@
   <ul class="nav pull-right">
       <%= search_form_for @search || Bar.ransack(params[:q]), :url => bars_path do |f| %>
       <div class="field" >
-        <%= f.label :name_cont, "Suche" %>
+        <%= f.label :name_cont, "Suche",:class => "icon-search" %>
         <%= f.text_field :name_cont %>
       </div>
       <% end %>
@@ -18,7 +18,7 @@
       <li><%= link_to 'Abmelden', destroy_user_session_path, method: :delete %></li>
     </ul>
       <ul class="nav pull-right">
-        <li><a>Willkommen, <%= current_user.email %> !</a></li>
+        <li><a>Willkommen, <%= current_user.user_name %> !</a></li>
       </ul>
       <% else %>
     <ul class="nav">
@@ -27,5 +27,9 @@
   </ul>
       <% end %>
   </div>
+  
+  <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
   
 </div>

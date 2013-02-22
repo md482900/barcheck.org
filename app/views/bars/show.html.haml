@@ -9,18 +9,13 @@
   %b Description:
   = @bar.description
 
-
 %p
-  - for category in Category.all
-    = category.name
-    = render_stars(category.rating)
-
-  /Like Button
+  %b Ambience : 
+  = rating_for @category, "ambience"
 %p  
-  %h3#notice= notice
   - if @current_user.present?
     = toggle_like_button(@bar, @current_user)
-
+    %h3#notice= notice
 
 %p
   = image_tag @bar.picture.url
@@ -28,12 +23,29 @@
 %p
   %b Address(Google Map)
 %p
-  %iframe{ width: 1000, height: 500, frameborder: 0, scrolling: 'no', marginheight: 0, marginwidth: 0, src: iframe_url(@bar) }
+  %iframe{ width: 700, height: 500, frameborder: 0, scrolling: 'no', marginheight: 0, marginwidth: 0, src: iframe_url(@bar) }
 
 - if can? :update, @bar
   = link_to 'Edit', edit_bar_path(@bar)
-\|  
-= link_to 'Back', bars_path
-\|
+  \|
 - if can? :destroy, @bar
   = link_to 'Destroy', @bar, method: :delete, data: { confirm: 'Are you sure?'}
+
+- if Comment.exists?
+  %table.table.table-bordered
+    - Comment.all.each do |f|
+      = f.created_at
+      %br
+      =f.user_name
+      %br
+      = f.body
+      %hr
+%p
+  %b   
+  %form{:action => "#{url_for(:controller=>'comments',:action =>'create')} "}
+    %textarea#textarea.field.span12{:rows => "6"}
+    %br
+    %button.btn Erstellen
+
+
+
