@@ -10,19 +10,20 @@ source 'https://rubygems.org'
   gem 'libv8'
   gem 'less'
   gem 'cancan'
-  
-  #used to create Like
+ 
+ #used to create Like
   gem 'make_flaggable', :git => 'git://github.com/cavneb/make_flaggable.git'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'sqlite3'
+ 	gem 'sqlite3'
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
 	gem 'guard-rspec'
 	gem 'faker'
-  gem 'pry'
+  	gem 'pry'
+	gem 'web-app-theme', '>=0.6.2'
  
 end
 

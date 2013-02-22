@@ -230,6 +230,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    web-app-theme (0.7.0)
 
 PLATFORMS
   ruby
@@ -259,3 +260,4 @@ DEPENDENCIES
   therubyracer
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
+  web-app-theme (>= 0.6.2)
