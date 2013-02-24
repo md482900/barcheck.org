@@ -12,26 +12,17 @@
   <div id="container">
     <div id="header">
       <div id="user-navigation">
-		<%= render :partial => "shared/navigation/navigation" %> 
+		  <%= render :partial => "shared/navigation/navigation" %> 
       </div>
       <div id="main-navigation">
         <ul class="wat-cf"></ul>
       </div>
     </div>    
     <div id="wrapper" class="wat-cf">
-      <div class="flash">
-        <% flash.each do |type, message| -%>
-          <div class="message <%= type %>">
-            <p><%= message %></p>
-          </div>
-        <% end -%>
-      </div>
       <div id="main">
         <%= yield %>
-        <div id="footer">
-          <div class="block">
+        <div class="footer">
             <p>Copyright &copy; <%= Time.now.year %> Barcheck.</p>
-          </div>      
         </div>
       </div>
       <div id="sidebar">

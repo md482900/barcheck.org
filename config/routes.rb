@@ -1,18 +1,29 @@
 BarcheckOrg::Application.routes.draw do
-  match '/rate' => 'rater#create', :as => 'rate'
+  get "comments/create"
 
-  get "pages/index"
+  match '/rate' => 'rater#create', :as => 'rate'
+ 
 
   ActiveAdmin.routes(self)
-
   devise_for :users
 
-  resources :comments
   resources :bars do
+    resources :comments
       member do
         get 'like'
     end
   end
+
+
+#match 'bars(/:page)' =>  'bars#index'
+#match 'bars/comments/:id' => 'comments#create'
+#match 'bars/:path' => 'bars#show'
+
+
+
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -69,4 +80,10 @@ BarcheckOrg::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+
+  #get "bars/show", :to => "comments#create"
+  #get "comments/create", :to => "comments#create"
+  #post "comments/create", :to => "comments#crate"
+  #get "page", :to => "controller#method"
 end

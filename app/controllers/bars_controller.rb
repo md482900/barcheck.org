@@ -2,6 +2,7 @@ class BarsController < ApplicationController
   load_and_authorize_resource
   # GET /bars
   # GET /bars.json
+  # encoding: utf-8
 
   def index
 
@@ -127,7 +128,12 @@ class BarsController < ApplicationController
     redirect_to bar_path, :notice => msg
   end
 
+#def addComment
+   # Comment.create(:user_id => current_user.id,:user_name => current_user.user_name, :bar_id => params[:barid], :comment=> params[:comment])
+    #@bar = Bar.find(params[:barid])
 
+    #redirect_to @bar
+  #end
 
 
 end

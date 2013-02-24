@@ -1,0 +1,68 @@
+
+  
+<div id="logo"><%= @bar.name %></div>
+
+
+<p>
+  <b> Beschreibung:</b>
+  <%= @bar.description %>
+</p>
+
+
+
+<p><%= flash[:notice] %></p>
+
+<p>
+  Ambience <%= rating_for @category, "ambience", :star => 5 %>
+</p>
+<!--Like_Button-->
+<p>  
+  <% if @current_user.present? %>
+    <%= toggle_like_button(@bar, @current_user)%>
+  <%end %>
+</p>
+
+<!--Bilder-->
+<p>
+  <%= image_tag @bar.picture.url%>
+</p>
+
+
+<p>
+  <b> Address(Google Map)</b>
+</p>
+<iframe src= <%=iframe_url(@bar)%> width: "1000", height: "1000", frameborder: "0", scrolling: 'no', marginheight: "0", marginwidth: "0" ></iframe><br>
+
+<% if can? :update, @bar %>
+  <%= link_to 'Edit', edit_bar_path(@bar) %>|
+<% end %>
+
+<% if can? :destroy, @bar %>
+  <%= link_to 'Destroy', @bar, method: :delete, data: { confirm: 'Are you sure?'} %>
+<%end %>
+
+
+<div >
+
+<p>Kommentar</p>
+
+<% if Comment.exists? %>
+    <% @bar.comments.each do |f| %>
+    <hr>
+      <b> Erstellt von: <%=f.user_name%> </b>
+      <p><%= f.text %></p>
+      <p>vor <%=distance_of_time_in_words(f.created_at, Time.now) %> </p>      
+    <%end %>
+<%end %>
+
+
+
+<%= form_for [@bar, @bar.comments.build] do |f| %>
+  <p><%= f.text_area :text, :size => '10x10' %></p>
+  <p><%= f.submit "Kommentieren" %>
+<% end %>
+
+
+</div>
+
+

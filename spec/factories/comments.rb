@@ -2,9 +2,8 @@
 
 FactoryGirl.define do
   factory :comment do
-    body "MyText"
-    user_name "MyString"
-    bar_name "MyString"
     bar_id 1
+    user_name 1
+    text "MyText"
   end
 end

@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20130222010718481) do
 
   create_table "bars", :force => true do |t|
     t.string   "name"
-    t.integer  "vote"
     t.text     "description"
     t.string   "address"
     t.datetime "created_at",           :null => false
@@ -43,17 +42,14 @@ ActiveRecord::Schema.define(:version => 20130222010718481) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
-    t.integer  "vote"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "comments", :force => true do |t|
-    t.text     "body"
-    t.string   "user_name"
-    t.string   "bar_name"
     t.integer  "bar_id"
-    t.integer  "user_id"
+    t.string   "user_name"
+    t.text     "text"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

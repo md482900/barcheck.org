@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
     flash[:error] = "Du musst Dich zu erst anmelden"
     redirect_to "/users/sign_in"
   end 
+
+
+
+  rescue_from ActiveRecord::RecordNotFound do |exception|
+  	flash[:notice] = "Die Bar wurde noch nicht erstellt"
+  	redirect_to "/bars/new"
+  end
 end
