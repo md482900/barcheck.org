@@ -5,5 +5,7 @@ class Bar < ActiveRecord::Base
   has_attached_file :picture
 
   make_flaggable :like
+  
+  letsrate_rateable "ambience", "service", "price"
   has_many :comments, :dependent => :destroy
 end

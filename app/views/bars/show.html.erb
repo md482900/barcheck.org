@@ -13,7 +13,13 @@
 <p><%= flash[:notice] %></p>
 
 <p>
-  Ambience <%= rating_for @category, "ambience", :star => 5 %>
+  Ambience <%= rating_for @bar, "ambience", :star => 5 %>
+</p>
+<p>
+  Service <%= rating_for @bar, "service", :star => 5 %>
+</p>
+<p>
+  Price <%= rating_for @bar, "price", :star => 5 %>
 </p>
 <!--Like_Button-->
 <p>  
@@ -58,7 +64,7 @@
 
 
 <%= form_for [@bar, @bar.comments.build] do |f| %>
-  <p><%= f.text_area :text, :size => '10x10' %></p>
+  <p><%= f.text_field :text, :size => '10*10' %></p>
   <p><%= f.submit "Kommentieren" %>
 <% end %>
 
