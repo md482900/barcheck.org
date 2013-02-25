@@ -1,6 +1,6 @@
 BarcheckOrg::Application.routes.draw do
   get "comments/create"
-
+  get "pages/index"
   match '/rate' => 'rater#create', :as => 'rate'
  
 
