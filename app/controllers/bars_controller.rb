@@ -1,16 +1,35 @@
 class BarsController < ApplicationController
+  load_and_authorize_resource
   # GET /bars
   # GET /bars.json
+  # encoding: utf-8
+
   def index
-    @bars = Bar.all
-    
+
+    #binding.pry
+
+    @search = Bar.ransack(params[:q])
+
+    if params[:q].nil?
+      @bars = Bar.all
+    else
+      @bars = @search.result(:distinct => true).order("created_at desc")
+    end
+
+
+
+    #binding.pry
+    if @bars.count == 1
+      redirect_to @bars.first
+    else
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bars }
-      
+      end
     end
   end
+
 
   # GET /bars/1
   # GET /bars/1.json
@@ -87,4 +106,37 @@ class BarsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def like
+    @liker = 0
+    @current_user = current_user
+    @bar = Bar.find(params[:id])
+
+    if @current_user.flagged?(@bar, :like)
+      #We already likes this
+      @current_user.unflag(@bar, :like)
+      msg = "Dir gefaehlt die Location nicht mehr"
+      @liker -= 1
+      if @liker < 1
+        @liker = 0
+      end
+
+    else
+      #We don't like this yet
+      @current_user.flag(@bar, :like)
+      msg = "Dir gefaehlt die Location"
+      @liker += 1
+    end
+
+    redirect_to bar_path, :notice => msg
+  end
+
+#def addComment
+   # Comment.create(:user_id => current_user.id,:user_name => current_user.user_name, :bar_id => params[:barid], :comment=> params[:comment])
+    #@bar = Bar.find(params[:barid])
+
+    #redirect_to @bar
+  #end
+
+
 end

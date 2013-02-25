@@ -1,29 +1,39 @@
-<div class="navbar navbar-fixed-top">
+<div class="navbar ">
   <div class="navbar-inner">
+    
     <ul class="nav">
-		<li><a href="/bars">Home</a></li>
-		<li><a href="/bars/new">Bar erstellen</a></li>
-	</ul>
-	<ul class="nav pull-right">
-		<li class="divider-vertical"></li>
-		<form class="navbar-search pull-left">
-  			<input type="text" class="search-query" placeholder="Search">
-		</form>
-		<li class="divider-vertical"></li>
-	</ul>
-	<ul class="nav">
-      <% if current_user %>
-      <li><%= link_to 'Abmelden', destroy_user_session_path, method: :delete %></li>
-  	</ul>
-      <ul class="nav pull-right">
-      	<li><a>Willkommen, <%= current_user.email %> !</a></li>
-      </ul>
-      <% else %>
-  	<ul class="nav">
-    	<li><%= link_to 'Login', new_user_session_path %></li>
-    	<li><%= link_to 'Registrieren', new_user_registration_path %></li>
-  </ul>
+      <li><a href="/pages/index">Home</a></li>
+      <li><a href="/bars/new">Bar erstellen</a></li>
+    </ul>
+    
+
+    <ul class="navbar-search pull-right">
+      <%= search_form_for @search || Bar.ransack(params[:q]), :url => bars_path do |f| %>
+      <div class="field" >
+        <%= f.label :name_cont,"Suche" %>
+        <%= f.text_field :name_cont %>
+      </div>
       <% end %>
+    </ul>
+    
+
+    <% if current_user %>
+      <ul class="nav">
+          <li><%= link_to 'Abmelden', destroy_user_session_path, method: :delete %></li>
+      </ul>
+      
+      <ul class="nav pull-right">
+        <li><a>Willkommen, <%= current_user.user_name %> !</a></li>
+
+      </ul>
+
+
+    <% else %>      
+      <ul class="nav">
+        <li><%= link_to 'Login', new_user_session_path %></li>
+        <li><%= link_to 'Registrieren', new_user_registration_path %></li>
+      </ul>
+    <% end %>
   </div>
-  
-</div>
+
+

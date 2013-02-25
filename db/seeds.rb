@@ -5,6 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Category.create(:name => 'Ambience', vote: nil )
-Category.create(:name => 'Service', vote: nil )
-Category.create(:name => 'Price', vote: nil)
+User.delete_all
+
+admin = User.create user_name:'admin', email: 'admin@test.org', password: 'admin@test'
+admin.add_role :admin
+
+user = User.create user_name:'Tester', email: 'testDude@test.de', password: 'test123'
+user.add_role :user

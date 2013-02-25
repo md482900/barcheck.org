@@ -5,12 +5,31 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-	<%= render :partial => "shared/navigation/navigation" %>
-	<%= yield %>
-
-
+	
+  <div id="container">
+    <div id="header">
+      <div id="user-navigation">
+		  <%= render :partial => "shared/navigation/navigation" %> 
+      </div>
+      <div id="main-navigation">
+        <ul class="wat-cf"></ul>
+      </div>
+    </div>    
+    <div id="wrapper" class="wat-cf">
+      <div id="main">
+        <%= yield %>
+        <div class="footer">
+            <p>Copyright &copy; <%= Time.now.year %> Barcheck.</p>
+        </div>
+      </div>
+      <div id="sidebar">
+        <%= yield :sidebar%>
+      </div>
+    </div>    
+  </div>
 
 </body>
 </html>
