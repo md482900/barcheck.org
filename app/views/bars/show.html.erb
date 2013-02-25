@@ -64,6 +64,8 @@
         <p>vor <%=distance_of_time_in_words(f.created_at, Time.now) %> </p>  
       </div>    
     <%end %>
+<% else %>
+  <h3>Leider ist noch kein Kommentar vorhanden</h3>
 <%end %>
 
 
