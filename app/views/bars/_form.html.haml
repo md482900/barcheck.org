@@ -19,10 +19,10 @@
     = f.label :address
     = f.text_field :address
 
-  - f.fields_for :images do |builder|
-  - if builder.object.new_record?
-    = builder.label :photo
-    = builder.file_field :photo
+  = f.fields_for :image do |builder|
+    - if builder.object.new_record?
+      = builder.label :photo, "Image File"
+      = builder.file_field :photo
 
   /.fiel_field
   /  = f.label :picture
