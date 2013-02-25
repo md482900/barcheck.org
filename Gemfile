@@ -1,13 +1,6 @@
 source 'https://rubygems.org'
-
-  
-  #used to create Like
-  
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-group :development, :test do
-  gem 'rails', '3.2.12'
+ gem 'rails', '3.2.12'
+  gem 'haml-rails'
   gem 'jquery-rails'
   gem 'devise'
   gem 'paperclip'
@@ -17,15 +10,24 @@ group :development, :test do
   gem 'libv8'
   gem 'less'
   gem 'cancan'
+
   gem 'letsrate'
+  
+  #used to create Like
+  gem 'make_flaggable', :git => 'git://github.com/cavneb/make_flaggable.git'
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+  gem 'rails-rateit'
+
+group :development, :test do
  	gem 'sqlite3'
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
 	gem 'guard-rspec'
 	gem 'faker'
-  gem 'pry'
+  	gem 'pry'
 	gem 'web-app-theme', '>=0.6.2'
-  gem 'make_flaggable', :git => 'git://github.com/cavneb/make_flaggable.git'
  
 end
 

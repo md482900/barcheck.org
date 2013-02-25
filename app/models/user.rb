@@ -17,9 +17,6 @@ class User < ActiveRecord::Base
             :presence => true,
             :length => { :in => 2..20 },
             :uniqueness => true
-  validates :email,
-            :presence => true,
-            :uniqueness => true
 
   # attr_accessible :title, :body
   has_many :comments

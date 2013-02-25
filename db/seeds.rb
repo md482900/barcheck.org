@@ -7,10 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.delete_all
 
-Category.create(:name => 'Ambience' )
-Category.create(:name => 'Service')
-Category.create(:name => 'Price')
-
 admin = User.create user_name:'admin', email: 'admin@test.org', password: 'admin@test'
 admin.add_role :admin
 
