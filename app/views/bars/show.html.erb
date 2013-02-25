@@ -18,10 +18,10 @@
   Ambience <%= rating_for @bar, "ambience", :star => 5 %>
 </p>
 <p>
-  Ambience <%= rating_for @bar, "service", :star => 5 %>
+  Service <%= rating_for @bar, "service", :star => 5 %>
 </p>
 <p>
-  Ambience <%= rating_for @bar, "price", :star => 5 %>
+  Price <%= rating_for @bar, "price", :star => 5 %>
 </p>
 <!--Like_Button-->
 <p>  
@@ -56,10 +56,13 @@
 
 <% if Comment.exists? %>
     <% @bar.comments.each do |f| %>
-    <hr>
-      <b> Erstellt von: <%=f.user_name%> </b>
-      <p><%= f.text %></p>
-      <p>vor <%=distance_of_time_in_words(f.created_at, Time.now) %> </p>      
+      <div class="well sidebar-nav">
+        <b> Erstellt von: <%=f.user_name%> </b>
+        <hr>
+        <p><%= f.text %></p>
+        <hr>
+        <p>vor <%=distance_of_time_in_words(f.created_at, Time.now) %> </p>  
+      </div>    
     <%end %>
 <%end %>
 

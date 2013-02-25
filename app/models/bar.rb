@@ -9,8 +9,7 @@ class Bar < ActiveRecord::Base
   make_flaggable :like
   
   letsrate_rateable "ambience", "service", "price"
-  has_many :comments, :dependent => :destroy
-  has_many :rate
+  
 
   validates :name, 
   			:presence => { :message => " Bitte ein Name eingeben" },	
@@ -24,5 +23,8 @@ class Bar < ActiveRecord::Base
 			:presence => { :message => " Bitte eine Kurzbeschreibung hinzufuegen" },
 			:length => { :maximum => 120, :message => 'Bitte maximal 120 Zeichen eingeben' }
 
+
+  has_many :comments, :dependent => :destroy
+  has_many :rate
 
 end
