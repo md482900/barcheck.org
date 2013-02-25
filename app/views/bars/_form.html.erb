@@ -39,7 +39,7 @@
         <%= f.fields_for :bar_images do |bar_images| %>
         <% unless bar_images.object.new_record? %>
           <p>
-            <%= link_to image_tag(bar_images.object.photo.url(:small))%>
+            <%= link_to image_tag(bar_images.object.photo.url(:thumb))%>
             <%= bar_images.check_box :_destroy %>
           </p>
         <% end %>

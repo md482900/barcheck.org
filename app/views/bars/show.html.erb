@@ -8,20 +8,26 @@
   <%= @bar.description %>
 </p>
 
-
+<% for bar_image in @bar.bar_images %>
+  <%= link_to image_tag(bar_image.photo.url(:small))%>
+<% end %>
 
 <p><%= flash[:notice] %></p>
 
-
-<b>Bewertung</b>
 <p>
-  Ambience <%= rating_for @bar, "ambience", :star => 5 %>
+<div id="logo">Wo?</div>
+</p>
+<iframe src= <%=iframe_url(@bar)%> style="width:100%" height= "380", frameborder= "0", scrolling= 'no', marginheight= "0", marginwidth= "0" ></iframe><br>
+
+<div id="logo">Bewerte</div>
+<p>
+  Ambiente <%= rating_for @bar, "ambience", :star => 5 %>
 </p>
 <p>
   Service <%= rating_for @bar, "service", :star => 5 %>
 </p>
 <p>
-  Price <%= rating_for @bar, "price", :star => 5 %>
+  Preis <%= rating_for @bar, "price", :star => 5 %>
 </p>
 <!--Like_Button-->
 <p>  
@@ -30,27 +36,9 @@
   <%end %>
 </p>
 
-<% for bar_image in @bar.bar_images %>
-  <%= link_to image_tag(bar_image.photo.url(:small))%>
-<% end %>
-
-<p>
-  <b> Address(Google Map)</b>
-</p>
-<iframe src= <%=iframe_url(@bar)%> width: "1000", height: "1000", frameborder: "0", scrolling: 'no', marginheight: "0", marginwidth: "0" ></iframe><br>
-
-<% if can? :update, @bar %>
-  <%= link_to 'Edit', edit_bar_path(@bar) %>|
-<% end %>
-
-<% if can? :destroy, @bar %>
-  <%= link_to 'Destroy', @bar, method: :delete, data: { confirm: 'Are you sure?'} %>
-<%end %>
-
-
 <div >
 
-<p>Kommentar</p>
+<div id="logo">Deine Meinung</div>
 
 <% if Comment.exists? %>
     <% @bar.comments.each do |f| %>
@@ -75,5 +63,13 @@
 
 
 </div>
+
+<% if can? :update, @bar %>
+  <%= link_to 'Edit', edit_bar_path(@bar) %>|
+<% end %>
+
+<% if can? :destroy, @bar %>
+  <%= link_to 'Destroy', @bar, method: :delete, data: { confirm: 'Are you sure?'} %>
+<%end %>
 
 
