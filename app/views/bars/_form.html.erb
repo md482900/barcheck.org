@@ -26,10 +26,26 @@
           <%= f.label :address, "Adresse" %><br/>
           <%= f.text_field :address %>
         </div>
+
         <div class="field">
-          <%= f.label :picture, "Bild" %><br/>
-          <%= f.file_field :picture %>
+          <%= f.fields_for :bar_images do |builder| %>
+            <% if builder.object.new_record? %>
+              <%= builder.label :photo, "Bitte ein Bild auswählen" %>
+              <%= builder.file_field :photo %>
+            <% end %>
+          <% end %>
         </div>
+        
+        <%= f.fields_for :bar_images do |bar_images| %>
+        <% unless bar_images.object.new_record? %>
+          <p>
+            <%= link_to image_tag(bar_images.object.photo.url(:small))%>
+            <%= bar_images.check_box :_destroy %>
+          </p>
+        <% end %>
+      <% end %>
+
+
         <div class ="actions" >
           <%= f.submit %>
         </div>

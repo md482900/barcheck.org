@@ -30,11 +30,9 @@
   <%end %>
 </p>
 
-<!--Bilder-->
-<p>
-  <%= image_tag @bar.picture.url%>
-</p>
-
+<% for bar_image in @bar.bar_images %>
+  <%= link_to image_tag(bar_image.photo.url(:small))%>
+<% end %>
 
 <p>
   <b> Address(Google Map)</b>

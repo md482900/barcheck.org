@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(:version => 20130222010718481) do
   add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
+  create_table "bar_images", :force => true do |t|
+    t.string   "caption"
+    t.integer  "bar_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
   create_table "bars", :force => true do |t|
     t.string   "name"
     t.text     "description"
