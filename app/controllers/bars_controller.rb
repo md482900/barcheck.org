@@ -36,7 +36,6 @@ class BarsController < ApplicationController
   def show
     @bar = Bar.find(params[:id])
 
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @bar }
@@ -47,8 +46,10 @@ class BarsController < ApplicationController
   # GET /bars/new.json
   def new
     @bar = Bar.new
-    3.times {@bar.image.build}
-    
+
+    3.times {@bar.bar_images.build} # added this
+
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @bar }
@@ -59,7 +60,9 @@ class BarsController < ApplicationController
   # GET /bars/1/edit
   def edit
     @bar = Bar.find(params[:id])
-    3.times {@bar.image.build}
+
+    3.times {@bar.bar_images.build} # added this
+
   end
 
   # POST /bars

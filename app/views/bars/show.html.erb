@@ -8,13 +8,32 @@
   <%= @bar.description %>
 </p>
 
-
+<% for bar_image in @bar.bar_images %>
+  <%= link_to image_tag(bar_image.photo.url(:small))%>
+<% end %>
 
 <p><%= flash[:notice] %></p>
 
+<p>
+<div id="logo">Wo?</div>
+</p>
+<iframe src= <%=iframe_url(@bar)%> style="width:100%" height= "380", frameborder= "0", scrolling= 'no', marginheight= "0", marginwidth= "0" ></iframe><br>
 
+<<<<<<< HEAD
 <b>Bewertung</b>
 
+=======
+<div id="logo">Bewerte</div>
+<p>
+  Ambiente <%= rating_for @bar, "ambience", :star => 5 %>
+</p>
+<p>
+  Service <%= rating_for @bar, "service", :star => 5 %>
+</p>
+<p>
+  Preis <%= rating_for @bar, "price", :star => 5 %>
+</p>
+>>>>>>> images
 <!--Like_Button-->
 <p>  
   <% if @current_user.present? %>
@@ -22,6 +41,7 @@
   <%end %>
 </p>
 
+<<<<<<< HEAD
 <!--Bilder-->
 <p>
   <%= image_tag @bar.picture.url%>
@@ -42,13 +62,20 @@
 <%end %>
 
 
+=======
+>>>>>>> images
 <div >
 
-<p>Kommentar</p>
+<div id="logo">Deine Meinung</div>
 
+<<<<<<< HEAD
 
 <% if @bar.comments.exists? %>
   <% @bar.comments.each do |f| %>
+=======
+<% if @bar.comments.exists? %>
+    <% @bar.comments.each do |f| %>
+>>>>>>> images
       <div class="well sidebar-nav">
         <p><b> Erstellt von: <%=f.user_name%> </b>
           (vor <%=distance_of_time_in_words(f.created_at, Time.now) %>) </p>
@@ -57,9 +84,13 @@
       </div>    
     <%end %>
 <% else %>
+<<<<<<< HEAD
   <div class="well sidebar-nav">
     <h6>Leider ist noch kein Kommentar vorhanden</h6>
   </div>
+=======
+  <h6>Leider ist noch kein Kommentar vorhanden</h6>
+>>>>>>> images
 <%end %>
 
 
@@ -71,5 +102,13 @@
 
 
 </div>
+
+<% if can? :update, @bar %>
+  <%= link_to 'Edit', edit_bar_path(@bar) %>|
+<% end %>
+
+<% if can? :destroy, @bar %>
+  <%= link_to 'Destroy', @bar, method: :delete, data: { confirm: 'Are you sure?'} %>
+<%end %>
 
 
