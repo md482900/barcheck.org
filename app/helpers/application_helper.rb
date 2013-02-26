@@ -1,7 +1,5 @@
 module ApplicationHelper
-	def render_stars(rating)
-		StarsRenderer.new(rating,self).render_stars
-	end	
+
 
 	#Zeit auf Deutsch	
 	def distance_of_time_in_words(from_time, to_time = 0, include_seconds = false)

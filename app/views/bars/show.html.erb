@@ -14,15 +14,7 @@
 
 
 <b>Bewertung</b>
-<p>
-  Ambience <%= rating_for @bar, "ambience", :star => 5 %>
-</p>
-<p>
-  Service <%= rating_for @bar, "service", :star => 5 %>
-</p>
-<p>
-  Price <%= rating_for @bar, "price", :star => 5 %>
-</p>
+
 <!--Like_Button-->
 <p>  
   <% if @current_user.present? %>
@@ -39,7 +31,7 @@
 <p>
   <b> Address(Google Map)</b>
 </p>
-<iframe src= <%=iframe_url(@bar)%> width: "1000", height: "1000", frameborder: "0", scrolling: 'no', marginheight: "0", marginwidth: "0" ></iframe><br>
+<iframe src= <%=iframe_url(@bar)%> style="width:100%", height: "380", frameborder: "0", scrolling: 'no', marginheight: "0", marginwidth: "0" ></iframe><br>
 
 <% if can? :update, @bar %>
   <%= link_to 'Edit', edit_bar_path(@bar) %>|
@@ -54,24 +46,26 @@
 
 <p>Kommentar</p>
 
-<% if Comment.exists? %>
-    <% @bar.comments.each do |f| %>
+
+<% if @bar.comments.exists? %>
+  <% @bar.comments.each do |f| %>
       <div class="well sidebar-nav">
-        <b> Erstellt von: <%=f.user_name%> </b>
+        <p><b> Erstellt von: <%=f.user_name%> </b>
+          (vor <%=distance_of_time_in_words(f.created_at, Time.now) %>) </p>
         <hr>
         <p><%= f.text %></p>
-        <hr>
-        <p>vor <%=distance_of_time_in_words(f.created_at, Time.now) %> </p>  
       </div>    
     <%end %>
 <% else %>
-  <h3>Leider ist noch kein Kommentar vorhanden</h3>
+  <div class="well sidebar-nav">
+    <h6>Leider ist noch kein Kommentar vorhanden</h6>
+  </div>
 <%end %>
 
 
 
 <%= form_for [@bar, @bar.comments.build] do |f| %>
-  <p><%= f.text_area :text, :size => '10x10' %></p>
+  <p><%= f.text_area :text, :size => '100x10' %></p>
   <p><%= f.submit "Kommentieren" %>
 <% end %>
 

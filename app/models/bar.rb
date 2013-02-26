@@ -8,20 +8,18 @@ class Bar < ActiveRecord::Base
 
   make_flaggable :like
   
-  letsrate_rateable "ambience", "service", "price"
-  
 
   validates :name, 
-  			:presence => { :message => " Bitte ein Name eingeben" },	
-  			:uniqueness => { :message => "Der Name ist bereits vorhanden" },
-   			:length => { :maximum => 20 , :message => 'Bitte nicht mehr als 20 Zeichen eingeben'}
+  			:presence => { :message => ": Bitte ein Name eingeben" },	
+  			:uniqueness => { :message => ": Der Name ist bereits vorhanden" },
+   			:length => { :maximum => 20 , :message => ':Bitte nicht mehr als 20 Zeichen eingeben'}
 
   validates :picture,
-  			:presence => { :message => " Bitte ein Bild hochladen" }
+  			:presence => { :message => ": Bitte ein Bild hochladen" }
 
   validates :description,
-			:presence => { :message => " Bitte eine Kurzbeschreibung hinzufuegen" },
-			:length => { :maximum => 120, :message => 'Bitte maximal 120 Zeichen eingeben' }
+			:presence => { :message => ": Bitte eine Kurzbeschreibung hinzufuegen" },
+			:length => { :maximum => 120, :message => ': Bitte maximal 120 Zeichen eingeben' }
 
 
   has_many :comments, :dependent => :destroy
