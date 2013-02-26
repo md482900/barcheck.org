@@ -43,11 +43,11 @@
 <% if @bar.comments.exists? %>
     <% @bar.comments.each do |f| %>
       <div class="well sidebar-nav">
-        <b> Erstellt von: <%=f.user_name%> </b>
+        <p> <b> Erstellt von: <%=f.user_name%> </b>
+        (vor <%=distance_of_time_in_words(f.created_at, Time.now) %>) </p>  
         <hr>
         <p><%= f.text %></p>
         <hr>
-        <p>vor <%=distance_of_time_in_words(f.created_at, Time.now) %> </p>  
       </div>    
     <%end %>
 <% else %>
