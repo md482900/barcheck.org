@@ -5,7 +5,6 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <%= javascript_include_tag "autocomplete-rails.js" %>
 </head>
 <body>
 	
@@ -17,7 +16,9 @@
       <div id="main-navigation">
         <ul class="wat-cf"></ul>
         <p class='notice'>
-          <%=flash[:notice]%>
+         <h4> <%=flash[:notice]%>
+          <%=flash[:message]%>
+          <%=flash[:error]%> </h4>
         </p>
       </div>
     </div>    
