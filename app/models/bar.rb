@@ -1,13 +1,13 @@
 class Bar < ActiveRecord::Base
-  attr_accessible :address, :description, :name, :picture
-  validate :name, :picture, :description, :address, presence: true
+
+  attr_accessible :address, :description, :name, :photo, :vote, :image_attributes
+  validate :name, :photo, :description, :vote, :address, presence: true
+
   validate :address, 
   		   :presence =>{:message => "Die Adresse bitte von Google Maps kopieren"},
-  			format: %r|^http(s?)://maps.google./|
+  			 format: %r|^http(s?)://maps.google./|
   has_attached_file :picture
 
-  make_flaggable :like
-  
 
   validates :name, 
   			:presence => { :message => ": Bitte ein Name eingeben" },	
@@ -21,8 +21,12 @@ class Bar < ActiveRecord::Base
 			:presence => { :message => ": Bitte eine Kurzbeschreibung hinzufuegen" },
 			:length => { :maximum => 120, :message => ': Bitte maximal 120 Zeichen eingeben' }
 
-
+  has_many :image, :dependent => :destroy
+  accepts_nested_attributes_for :image, :reject_if => :all_blank
   has_many :comments, :dependent => :destroy
   has_many :rate
+
+
+  make_flaggable :like
 
 end

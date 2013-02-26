@@ -40,12 +40,6 @@ ActiveRecord::Schema.define(:version => 20130224015847) do
     t.datetime "picture_updated_at"
   end
 
-  create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "comments", :force => true do |t|
     t.integer  "bar_id"
     t.string   "user_name"
@@ -68,6 +62,16 @@ ActiveRecord::Schema.define(:version => 20130224015847) do
   add_index "flaggings", ["flag", "flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], :name => "access_flag_flaggings"
   add_index "flaggings", ["flaggable_type", "flaggable_id"], :name => "index_flaggings_on_flaggable_type_and_flaggable_id"
   add_index "flaggings", ["flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], :name => "access_flaggings"
+
+  create_table "image", :force => true do |t|
+    t.integer  "bar_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
