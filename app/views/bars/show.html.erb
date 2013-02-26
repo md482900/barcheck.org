@@ -19,49 +19,56 @@
 </p>
 <iframe src= <%=iframe_url(@bar)%> style="width:100%" height= "380", frameborder= "0", scrolling= 'no', marginheight= "0", marginwidth= "0" ></iframe><br>
 
-<div id="logo">Bewerte</div>
-<p>
-  Ambiente <%= rating_for @bar, "ambience", :star => 5 %>
-</p>
-<p>
-  Service <%= rating_for @bar, "service", :star => 5 %>
-</p>
-<p>
-  Preis <%= rating_for @bar, "price", :star => 5 %>
-</p>
-<!--Like_Button-->
-<p>  
-  <% if @current_user.present? %>
-    <%= toggle_like_button(@bar, @current_user)%>
-  <%end %>
-</p>
 
+
+
+
+                <!--Rating-->
+<div id="logo">Bewerte</div>
+<% if current_user.present? %>
+    <p>
+        Ambiente <%= rating_for @bar, "ambience", :star => 5 %>
+    </p>
+    <p>
+        Service <%= rating_for @bar, "service", :star => 5 %>
+    </p>
+    <p>
+        Preis <%= rating_for @bar, "price", :star => 5 %>
+    </p>
+    <p>  
+      <%= toggle_like_button(@bar, @current_user)%>
+    </p>
+<% else %>
+              <!--Like_Button-->
+  <p> Du musst Dich zu erst einloggen </p>
+  <%= button_to 'Login', "/users/sign_in" %>
+<% end  %>
 <div >
 
+
+
+
+
+              <!--Comment-->
 <div id="logo">Deine Meinung</div>
-
-<% if @bar.comments.exists? %>
-    <% @bar.comments.each do |f| %>
-      <div class="well sidebar-nav">
-        <p> <b> Erstellt von: <%=f.user_name%> </b>
-        (vor <%=distance_of_time_in_words(f.created_at, Time.now) %>) </p>  
-        <hr>
-        <p><%= f.text %></p>
-        <hr>
-      </div>    
+    <% if @bar.comments.exists? %>
+        <% @bar.comments.each do |f| %>
+          <div class="well sidebar-nav">
+            <p> <b> Erstellt von: <%=f.user_name%> </b>
+            (vor <%=distance_of_time_in_words(f.created_at, Time.now) %>) </p>  
+            <hr>
+            <p><%= f.text %></p>
+          </div>    
+        <%end %>
+    <% else %>
+       <div class="well sidebar-nav">
+          <h5>Leider ist noch kein Kommentar vorhanden</h5>
+        </div>
     <%end %>
-<% else %>
-  <h6>Leider ist noch kein Kommentar vorhanden</h6>
-<%end %>
-
-
-
-<%= form_for [@bar, @bar.comments.build] do |f| %>
-  <p><%= f.text_area :text, :size => '10x10' %></p>
-  <p><%= f.submit "Kommentieren" %>
-<% end %>
-
-
+      <%= form_for [@bar, @bar.comments.build] do |f| %>
+        <p><%= f.text_area :text, :size => '10x10' %></p>
+        <p><%= f.submit "Kommentieren" %>
+      <% end %>
 </div>
 
 <% if can? :update, @bar %>
