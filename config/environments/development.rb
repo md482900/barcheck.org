@@ -37,7 +37,4 @@ BarcheckOrg::Application.configure do
 
   # Configure ActionMailer
   config.action_mailer.default_url_option = { :host => 'localhost:3000'}
-
-  # Paperclip Pfad zu Imagemagick
-  Paperclip.options[:command_path] = "/usr/local/bin/"
 end

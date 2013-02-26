@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   make_flagger
+  letsrate_rater
 
   rolify
   # Include default devise modules. Others available are:
