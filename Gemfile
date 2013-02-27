@@ -10,7 +10,6 @@ source 'https://rubygems.org'
   gem 'libv8'
   gem 'less'
   gem 'cancan'
-
   gem 'letsrate'
   
   #used to create Like
@@ -46,7 +45,7 @@ group :assets do
   gem 'less-rails-bootstrap' 
   gem 'therubyracer' 
   gem 'jquery-rails'
-
+  gem 'coffee-script-source', '~> 1.4.0'
  
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

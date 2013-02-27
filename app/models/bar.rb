@@ -26,3 +26,4 @@ class Bar < ActiveRecord::Base
   accepts_nested_attributes_for :bar_images, reject_if: :all_blank
 
 end
+

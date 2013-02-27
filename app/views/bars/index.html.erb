@@ -3,17 +3,17 @@
 <header>
   <div id="logo">Barcheck.org</div>
 </header>
-<% if @bar.blank? %>
-	<h3>Deine Suche erziehlt leider kein Treffer</h3>
+
+<div class="table">
+<% if @bars.blank? %>
+	<h4>Deine Suche erziehlt leider kein Treffer!</h4>
 <% else %>
-	<h3>Deine Suche erziehlt folgende Treffer</h3>
+	<h4>Deine Suche erziehlt folgende Treffer:</h4>
 	<h4>
-		<% @bars.each do |bar| %>
+		<% @bars.sort{|a,b|a.name.downcase <=> b.name.downcase}.each do |bar| %>
 		   <%=link_to(bar.name, bar_path(bar))%></br>
 		<% end %>
 	</h4>
 <% end %>
-
-
-
+</div>
 

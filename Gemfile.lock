@@ -241,6 +241,7 @@ DEPENDENCIES
   activeadmin
   cancan
   coffee-rails (~> 3.2.1)
+  coffee-script-source (~> 1.4.0)
   devise
   factory_girl_rails
   faker
