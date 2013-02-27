@@ -95,6 +95,7 @@ div {
   width: 400px;
   height: 200px;
   text-align: center;
+  border-radius: 20px;
 }
 #bartext{
   padding-top: 50px;
@@ -104,6 +105,9 @@ div {
   height: 200px;
   line-height: 30px;
   text-align: left;
+  padding-right: 50px;
+  padding-left: 50px;
+  border-radius: 20px;
 }
 #barlabel{
   font-size: 50px;
@@ -112,13 +116,34 @@ div {
   text-align: center;
   height: 50px;
   padding-top: 25px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 #rate{
-  background-color: #FFFF00;
-  float: left;
   font-size: 15px;
+  color: #FF0080;
+  background-color: #2E2E2E;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  font-size: 18px;
+  width: 120px;
+
 }
 #comment{
   width: 100%;
   height: 80px;
+}
+#space{
+  height: 25px;
+}
+#spacebg{
+  height: 25px;
+  background-color: #2E2E2E;  
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+#iframe{
+  border-radius: 20px;
 }
