@@ -148,6 +148,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.0)
       mime-types
+    pg (0.14.1)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -255,6 +256,7 @@ DEPENDENCIES
   libv8 (~> 3.3.10)
   make_flaggable!
   paperclip
+  pg
   pry
   rails (= 3.2.12)
   rails-rateit
