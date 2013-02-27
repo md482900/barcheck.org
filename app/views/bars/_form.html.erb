@@ -37,7 +37,7 @@
         <% unless bar_images.object.new_record? %>
           <p>
             <%= link_to image_tag(bar_images.object.photo.url(:thumb))%>
-            <%= bar_images.check_box :_destroy %>
+            Bild löschen <%= bar_images.check_box :_destroy%>
           </p>
         <% end %>
       <% end %>

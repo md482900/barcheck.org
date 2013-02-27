@@ -8,4 +8,5 @@ class BarImage < ActiveRecord::Base
       				:path => proc { |style| "#{style}/#{id}_#{photo.original_filename}" }}
   validates_attachment_presence :photo
   validates_attachment_size :photo, :less_than => 5.megabytes
+
 end
