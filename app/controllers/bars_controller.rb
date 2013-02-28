@@ -17,12 +17,11 @@ class BarsController < ApplicationController
     end
 
 
-
     #binding.pry
     if @bars.count == 1
       redirect_to @bars.first
     else
-
+      
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bars }

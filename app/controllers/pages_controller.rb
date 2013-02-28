@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def index
+
     @bars = Bar.find(3.times.map{ 1 + Random.rand(Bar.count) } )
 
     respond_to do |format|
