@@ -10,6 +10,8 @@ source 'https://rubygems.org'
   gem 'libv8', '~> 3.3.10'
   gem 'less'
   gem 'cancan'
+  gem 'paperclip-dropbox'
+  gem 'dropbox'
   gem 'letsrate'
   
   #used to create Like

@@ -18,7 +18,7 @@ class Bar < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_many :rates
   has_many :bar_images, :dependent => :destroy
-  accepts_nested_attributes_for :bar_images, reject_if: :all_blank
+  accepts_nested_attributes_for :bar_images, :allow_destroy => true, reject_if: :all_blank
 
 
   make_flaggable :like
