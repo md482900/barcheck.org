@@ -2,6 +2,7 @@ class BarsController < ApplicationController
   load_and_authorize_resource
   # GET /bars
   # GET /bars.json
+  # encoding: utf-8
 
   def index
 
@@ -16,12 +17,11 @@ class BarsController < ApplicationController
     end
 
 
-
     #binding.pry
     if @bars.count == 1
       redirect_to @bars.first
     else
-
+      
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bars }
@@ -35,7 +35,6 @@ class BarsController < ApplicationController
   def show
     @bar = Bar.find(params[:id])
 
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @bar }
@@ -46,6 +45,7 @@ class BarsController < ApplicationController
   # GET /bars/new.json
   def new
     @bar = Bar.new
+    5.times {@bar.bar_images.build} # added this
 
     respond_to do |format|
       format.html # new.html.erb
@@ -56,6 +56,7 @@ class BarsController < ApplicationController
   # GET /bars/1/edit
   def edit
     @bar = Bar.find(params[:id])
+    5.times {@bar.bar_images.build} # added this
   end
 
   # POST /bars
@@ -127,7 +128,12 @@ class BarsController < ApplicationController
     redirect_to bar_path, :notice => msg
   end
 
+#def addComment
+   # Comment.create(:user_id => current_user.id,:user_name => current_user.user_name, :bar_id => params[:barid], :comment=> params[:comment])
+    #@bar = Bar.find(params[:barid])
 
+    #redirect_to @bar
+  #end
 
 
 end

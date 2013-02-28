@@ -7,24 +7,28 @@ source 'https://rubygems.org'
   gem 'ransack'
   gem 'rolify'
   gem 'activeadmin'
-  gem 'libv8'
+  gem 'libv8', '~> 3.3.10'
   gem 'less'
   gem 'cancan'
+  gem 'paperclip-dropbox'
+  gem 'dropbox'
+  gem 'letsrate'
   
   #used to create Like
   gem 'make_flaggable', :git => 'git://github.com/cavneb/make_flaggable.git'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
+  gem 'rails-rateit'
 
 group :development, :test do
-  gem 'sqlite3'
+ 	gem 'sqlite3'
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
 	gem 'guard-rspec'
 	gem 'faker'
-  gem 'pry'
+  	gem 'pry'
+	gem 'web-app-theme', '>=0.6.2'
  
 end
 
@@ -41,9 +45,9 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'twitter-bootstrap-rails'
   gem 'less-rails-bootstrap' 
-  gem 'therubyracer' 
+  gem 'therubyracer', '~> 0.10.2' 
   gem 'jquery-rails'
-
+  gem 'coffee-script-source', '~> 1.4.0'
  
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -52,7 +56,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-
+group :production do
+  gem 'pg'
+end
 
 
 # To use ActiveModel has_secure_password

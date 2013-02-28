@@ -1,0 +1,53 @@
+<div >
+      <%= form_for (@bar), :html => {:multipart => true} do |f| %>
+        <% if @bar.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@bar.errors.count, "error") %>prohibited this bar from being saved:</h2>
+            <ul>
+              <% @bar.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <%end%>
+            </ul>
+          </div>
+        <%end%>
+        <div class="field">
+          <div id="label2">Name<br></div>
+          <%= f.text_field :name, :id =>"textfields" %>
+        </div>
+
+        <div class="field">
+          <div id="label2">Beschreibung<br></div>
+          <%= f.text_area :description, :id => "comment"%>
+        </div>
+        <div class="field">
+          <div id="label2">Adresse<br></div>
+          <%= f.text_field :address, :id =>"textfields"%>
+        </div>
+
+        <div class="field">
+          <div id="label2">Bilderhochladen<br></div>
+          <%= f.fields_for :bar_images do |builder| %>
+            <% if builder.object.new_record? %>
+              <%= builder.file_field :photo %>
+            <% end %>
+          <% end %>
+        </div>
+        
+        <%= f.fields_for :bar_images do |bar_images| %>
+        <% unless bar_images.object.new_record? %>
+          <p>
+            <%= link_to image_tag(bar_images.object.photo.url(:thumb))%>
+            Bild löschen <%= bar_images.check_box :_destroy%>
+          </p>
+        <% end %>
+      <% end %>
+      <div id="space"></div>
+
+        <div class ="actions" >
+          <%= f.submit :class => "btn btn-inverse"%>
+        </div>
+      <% end %>
+      <div id="spacebg"></div>
+
+
+</div>
