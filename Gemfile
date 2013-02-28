@@ -22,7 +22,7 @@ source 'https://rubygems.org'
 
 
 group :development, :test do
- 	gem 'sqlite3'
+ 	#gem 'sqlite3'
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
 	gem 'guard-rspec'
@@ -37,9 +37,9 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 
-#group :production do
- # gem 'pg'
-#end
+group :production do
+  gem 'pg'
+end
 
 
 group :assets do
