@@ -11,9 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20130222010718481) do
-
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -100,7 +98,6 @@ ActiveRecord::Schema.define(:version => 20130222010718481) do
   end
 
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], :name => "index_rating_caches_on_cacheable_id_and_cacheable_type"
-
 
   create_table "roles", :force => true do |t|
     t.string   "name"
