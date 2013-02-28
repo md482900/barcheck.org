@@ -1,8 +1,5 @@
 class User < ActiveRecord::Base
-  make_flagger
-  letsrate_rater
 
-  rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -18,6 +15,15 @@ class User < ActiveRecord::Base
             :length => { :in => 2..20 },
             :uniqueness => true
 
+
+  validates :password,
+            :presence => true,
+            :length => {:within => 6..40}
+
   # attr_accessible :title, :body
   has_many :comments
+
+  make_flagger
+  letsrate_rater
+    rolify
 end
