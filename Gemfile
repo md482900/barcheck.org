@@ -58,6 +58,8 @@ end
 
 group :production do
   gem 'pg'
+  gem 'twitter-bootstrap-rails'
+  gem 'less-rails-bootstrap' 
 end
 
 
