@@ -55,12 +55,12 @@
         <%= form_for [@bar, @bar.comments.build] do |f| %>
         <p><%= f.text_area :text, :id => "comment" %></p>
         <p><%= f.submit "Kommentieren" ,:class => "btn btn-inverse"  %></p>
-        <!--Like_Button-->
+      <% end %>
+      <!--Like_Button-->
         <p><% if @current_user.present? %>
           <%= toggle_like_button(@bar, @current_user)%>
           <%end %>
         </p>
-      <% end %>
   </div>
 </div>
 

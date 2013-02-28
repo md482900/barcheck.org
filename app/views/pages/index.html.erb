@@ -2,10 +2,14 @@
   <div id="logo">Barcheck.org</div>
   <p class="lead">Bewerten sie Bars, laden Bilder der Location hoch oder geben sie Kommentare zu ihrem Besuch ab.<p>
 </header>
+<% if @bars.blank? %>
+	<h3> Zur Zeit ist noch keine Bar vorhanden, Du kannst aber aber eine Erstellen <h3> 
+<% else %>
 <% @bars.each do |bar| %>
 	<% for bar_image in bar.bar_images %>
     	<%= link_to image_tag (bar_image.photo.url(:small)), :class =>"img-polaroid"%>
     <% end %>
+<% end %>
 <% end %>
 
 
