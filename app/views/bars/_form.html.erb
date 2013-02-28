@@ -10,24 +10,24 @@
             </ul>
           </div>
         <%end%>
-
         <div class="field">
-          <%= f.label :name, "Name" %><br/>
-          <%= f.text_field :name %>
-        </div>
-        <div class="field">
-          <%= f.label :description,"Beschreibung" %><br/>
-          <%= f.text_area :description %>
-        </div>
-        <div class="field">
-          <%= f.label :address, "Adresse" %><br/>
-          <%= f.text_field :address %>
+          <div id="label2">Name<br></div>
+          <%= f.text_field :name, :id =>"textfields" %>
         </div>
 
         <div class="field">
+          <div id="label2">Beschreibung<br></div>
+          <%= f.text_area :description, :id => "comment"%>
+        </div>
+        <div class="field">
+          <div id="label2">Adresse<br></div>
+          <%= f.text_field :address, :id =>"textfields"%>
+        </div>
+
+        <div class="field">
+          <div id="label2">Bilderhochladen<br></div>
           <%= f.fields_for :bar_images do |builder| %>
             <% if builder.object.new_record? %>
-              <%= builder.label :photo, "Bitte ein Bild auswählen" %>
               <%= builder.file_field :photo %>
             <% end %>
           <% end %>
@@ -41,11 +41,13 @@
           </p>
         <% end %>
       <% end %>
-
+      <div id="space"></div>
 
         <div class ="actions" >
-          <%= f.submit %>
+          <%= f.submit :class => "btn btn-inverse"%>
         </div>
       <% end %>
+      <div id="spacebg"></div>
+
 
 </div>

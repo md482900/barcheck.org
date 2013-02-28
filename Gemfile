@@ -12,7 +12,6 @@ source 'https://rubygems.org'
   gem 'cancan'
   gem 'paperclip-dropbox'
   gem 'dropbox'
-
   gem 'letsrate'
   
   #used to create Like

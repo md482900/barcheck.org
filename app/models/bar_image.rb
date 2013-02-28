@@ -5,7 +5,8 @@ class BarImage < ActiveRecord::Base
   					:storage => :dropbox,
     				:dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
     				:dropbox_options => {
-      				:path => proc { |style| "#{style}/#{id}_#{photo.original_filename}" }}
+      				:path => proc { |style| "#{style}/#{id}_#{photo.original_filename}" }, :unique_filename => true
+      				}
   validates_attachment_presence :photo
   validates_attachment_size :photo, :less_than => 5.megabytes
 

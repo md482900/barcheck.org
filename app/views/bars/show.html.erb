@@ -1,10 +1,9 @@
-
 <div id="bar">
   <div id="barname">
     <%= @bar.name %>
   </div>
   <div id="bartext">
-    <p><%= @bar.description %></p>
+    <%= @bar.description %>
   </div>
   <div id= "space"></div>
   <div id="barlabel">
@@ -55,7 +54,7 @@
       <%end %>
         <%= form_for [@bar, @bar.comments.build] do |f| %>
         <p><%= f.text_area :text, :id => "comment" %></p>
-        <p><%= f.submit "Kommentieren" %></p>
+        <p><%= f.submit "Kommentieren" ,:class => "btn btn-inverse"  %></p>
         <!--Like_Button-->
         <p><% if @current_user.present? %>
           <%= toggle_like_button(@bar, @current_user)%>
