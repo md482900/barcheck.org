@@ -59,9 +59,13 @@
             <h5>Leider ist noch kein Kommentar vorhanden</h5>
           </div>
       <%end %>
-        <%= form_for [@bar, @bar.comments.build] do |f| %>
-        <p><%= f.text_area :text, :id => "comment" %></p>
-        <p><%= f.submit "Kommentieren" ,:class => "btn btn-inverse", :id=> "com" %></p>
+        <% if current_user.present? %>
+          <%= form_for [@bar, @bar.comments.build] do |f| %>
+             <p><%= f.text_area :text, :id => "comment" %></p>
+              <p><%= f.submit "Kommentieren" ,:class => "btn btn-inverse", :id=> "com" %></p>
+            <% end %> 
+          <% else %>
+          <p><%=link_to 'Du musst dich zuerst einloggen um ein Kommentar zu erfassen' , '/users/sign_in' %></p>
       <% end %>
       <!--Like_Button-->
         <p><% if @current_user.present? %>
