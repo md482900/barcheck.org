@@ -1,33 +1,22 @@
 == Barcheck.org
 
-==Example
-== Welcome to Rails
+== Was ist Barcheck?
+Barcheck ist eine Webanwendung für Barbetreiber und Leute die das Nachtleben lieben.
+Durch die Webanwendung kann der Benutzer sich über Bars und Kneipen informieren, diese
+Bewerten, sowie ein Kommentar von seinem Besuch abgeben. Für die Barbetreiber ist es
+eine gute Werbeplattform, die auch Feedback vom Kunden gibt.
 
-Rails is a web-application framework that includes everything needed to create
-database-backed web applications according to the Model-View-Control pattern.
 
-This pattern splits the view (also called the presentation) into "dumb"
-templates that are primarily responsible for inserting pre-built data in between
-HTML tags. The model contains the "smart" domain objects (such as Account,
-Product, Person, Post) that holds all the business logic and knows how to
-persist themselves to a database. The controller handles the incoming requests
-(such as Save New Account, Update Product, Show Post) by manipulating the model
-and directing data to the view.
+== Eingebundene Gems
 
-In Rails, the model is handled by what's called an object-relational mapping
-layer entitled Active Record. This layer allows you to present the data from
-database rows as objects and embellish these data objects with business logic
-methods. You can read more about Active Record in
-link:files/vendor/rails/activerecord/README.html.
+* paperclip und paperclip-dropbox
 
-The controller and view are handled by the Action Pack, which handles both
-layers by its two parts: Action View and Action Controller. These two layers
-are bundled in a single package due to their heavy interdependence. This is
-unlike the relationship between the Active Record and Action Pack that is much
-more separate. Each of these packages can be used independently outside of
-Rails. You can read more about Action Pack in
-link:files/vendor/rails/actionpack/README.html.
+Mit paperclip wurde die Funktion Bilderhochladen realisiert.
+Die Bilder werden nicht wie sonst üblich im Projekt gespeichert, sondern
+im Cloudspeicher von Dropbox. Dieser Schritt war nötig da Heroku in diesem Bereich
+nur eingeschränkte Möglichkeiten bietet.
 
+*
 
 == Getting Started
 

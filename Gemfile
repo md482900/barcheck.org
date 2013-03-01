@@ -19,6 +19,7 @@ source 'https://rubygems.org'
   gem 'letsrate'
   gem 'web-app-theme', '>=0.6.2'
   gem 'heroku'
+  gem 'make_flaggable', :git => 'git://github.com/cavneb/make_flaggable.git'
 
 
 group :development, :test do
