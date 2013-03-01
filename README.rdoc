@@ -31,8 +31,7 @@ link:files/vendor/rails/actionpack/README.html.
 == Funktionen
 
 
-<<<<<<< HEAD
-=======
+
 == Eingebundene Gems
 
 * devise
@@ -65,9 +64,6 @@ im Cloudspeicher von Dropbox. Dieser Schritt war nötig da Heroku in diesem Bere
 nur eingeschränkte Möglichkeiten bietet.
 
  
-
-
->>>>>>> bbc0fe71dc2830a81a2766f515dfd502ac16560b
 == Getting Started
 
 1. At the command prompt, create a new Rails application:
