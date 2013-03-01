@@ -2,6 +2,11 @@
   <div id="logo">Barcheck.org</div>
   <p class="lead">Bewerten sie Bars, laden Bilder der Location hoch oder geben sie Kommentare zu ihrem Besuch ab.<p>
 </header>
+
+<% @allbars.each do |bar| %>
+    	<%=link_to(bar.name, bar_path(bar))%></br>
+<% end %>
+<br><br>
 <% if @bars.blank? %>
 <% else %>
 <% @bars.each do |bar| %>
