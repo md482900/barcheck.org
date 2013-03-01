@@ -5,7 +5,7 @@ describe 'Sign in' do
 		@user1 = FactoryGirl.create(:user1)
 		@user2 = FactoryGirl.create(:user2)
 		@user3 = FactoryGirl.create(:user3)
-		@bar = FactoryGirl.create(:bar1)
+		@bar1 = FactoryGirl.create(:bar1)
 	end
 
 

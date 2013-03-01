@@ -6,9 +6,6 @@ describe BarImage do
 		m.macro.should == :belongs_to
 	end
 
-	it 'should be valid' do
-		x =BarImage.new :photo => Rails.root.join("app/images/rails.png").open
-		x.should be_valid
-	end
+
 
 end
