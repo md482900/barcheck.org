@@ -25,7 +25,7 @@
         </div>
 
         <div class="field">
-          <div id="label2">Bilderhochladen<br></div>
+          <div id="label2">Bilder hochladen<br></div>
           <%= f.fields_for :bar_images do |builder| %>
             <% if builder.object.new_record? %>
               <%= builder.file_field :photo %>

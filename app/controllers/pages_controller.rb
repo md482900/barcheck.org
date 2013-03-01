@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def index
 
+    @allbars = Bar.all
+
   	if Bar.count > 0
     	@bars = Bar.find(3.times.map{ 1 + Random.rand(Bar.count) } )
     else
