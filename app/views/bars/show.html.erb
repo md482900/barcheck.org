@@ -54,7 +54,7 @@
       <%end %>
         <%= form_for [@bar, @bar.comments.build] do |f| %>
         <p><%= f.text_area :text, :id => "comment" %></p>
-        <p><%= f.submit "Kommentieren" ,:class => "btn btn-inverse"  %></p>
+        <p><%= f.submit "Kommentieren" ,:class => "btn btn-inverse", :id=> "com" %></p>
       <% end %>
       <!--Like_Button-->
         <p><% if @current_user.present? %>
