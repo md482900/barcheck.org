@@ -2,10 +2,22 @@
     
 == Was ist Barcheck?
     
-Barcheck ist eine Webanwendung für Barbetreiber und Leute die das Nachtleben lieben.Durch die Webanwendung kann der Benutzer sich über Bars und Kneipen informieren, diese Bewerten, sowie ein Kommentar von seinem Besuch abgeben. Für die Barbetreiber ist es eine gute Werbeplattform, die auch Feedback vom Kunden gibt.
+Barcheck ist eine Webanwendung für Barbetreiber und Leute die das Nachtleben lieben.
+Durch die Webanwendung kann der Benutzer sich über Bars und Kneipen informieren, 
+diese Bewerten, sowie ein Kommentar von seinem Besuch abgeben. 
+Für die Barbetreiber ist es eine gute Werbeplattform, die auch Feedback vom Kunden gibt.
 
 == Funktionen
 
+* Bar erstellen
+
+* Bars anschauen
+
+* Bars suchen
+
+* Bars bewerten
+
+* Bars kommentieren
 
 
 == Eingebundene Gems
@@ -14,13 +26,17 @@ Barcheck ist eine Webanwendung für Barbetreiber und Leute die das Nachtleben li
     Ermöglicht eine schnelle und flexible Benutzerauthentifizierung zu erstellen.
   
 * ransack
-    Mit ransack wurde die Suchen-Funktion erstellt. Wir haben uns für ransack   entschieden, da es sich auch leicht auf komplexere Suchanfragen eignet.
+    Mit ransack wurde die Suchen-Funktion erstellt. 
+    Wir haben uns für ransack entschieden, da es sich auch leicht 
+    auf komplexere Suchanfragen eignet.
 
 * rolify
     Ermöglicht einfache Rollenverteilung unter den Benutzern.
   
 * activeadmin
-    Durch dieses Gem wird die Administration für Barcheck realisiert. Es bietet ein Backend mit einer Übersicht über fast alle hinterlegten Daten. Es ist das Administrations Framework für RoR.
+    Durch dieses Gem wird die Administration für Barcheck realisiert. 
+    Es bietet ein Backend mit einer Übersicht über fast alle hinterlegten Daten. 
+    Es ist das Administrations Framework für RoR.
   
 * cancan
     Ermöglicht Rechte und Aktionen bestimmten Rollen zuzuweisen
@@ -33,7 +49,17 @@ Barcheck ist eine Webanwendung für Barbetreiber und Leute die das Nachtleben li
   
 * paperclip und paperclip-dropbox 
     Mit paperclip wurde die Funktion Bilderhochladen realisiert.
-    Die Bilder werden nicht wie sonst üblich im Projekt gespeichert, sondern im Cloudspeicher von Dropbox. Dieser Schritt war nötig da Heroku in diesem Bereich nur eingeschränkte Möglichkeiten bietet.
+    Die Bilder werden nicht wie sonst üblich im Projekt gespeichert, sondern im Cloudspeicher von Dropbox. 
+    Dieser Schritt war nötig da Heroku in diesem Bereich nur eingeschränkte Möglichkeiten bietet.
+
+== Hinweise
+
+* Als Adresse wird eine maps.google Adresse erwartet wie z.B. https://maps.google.de/maps?q=google+maps+cubabar+k%C3%B6ln&hl=de&ie=UTF8&ll=50.929575,6.937501&spn=0.007519,0.019741&fb=1&hq=cubabar&hnear=0x47bf259169ab2fe5:0x42760fc4a2a77f0,K%C3%B6ln,+Deutschland&cid=0,0,17157508674649457803&t=h&z=16&iwloc=A
+
+== Bugs, Fehler
+* Da wir die Bilder im Cloudspeicher von Dropbox speichern ist die Performance nicht überragend sowohl beim speichern als auch beim abrufen der Bilder.
+
+* letsrate Bewertungen werden nicht gespeichert, da das Gem seit kurzem Probleme macht. Ersteller des Gem hat noch kein Fix geliefert.
 
 
 ==Example
