@@ -1,4 +1,4 @@
-require "spec_helper"
+require "spec_helper.rb"
 
 describe BarsController do
   describe "routing" do
