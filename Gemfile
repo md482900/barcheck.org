@@ -19,6 +19,7 @@ source 'https://rubygems.org'
   gem 'letsrate'
   gem 'web-app-theme', '>=0.6.2'
   gem 'heroku'
+  #used to create Like
   gem 'make_flaggable', :git => 'git://github.com/cavneb/make_flaggable.git'
 
 
@@ -30,9 +31,6 @@ group :development, :test do
 	gem 'faker'
   gem 'pry'
 	
-  #used to create Like
-  gem 'make_flaggable', :git => 'git://github.com/cavneb/make_flaggable.git'
- 
 end
 
 # Gems used only for assets and not required
