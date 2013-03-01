@@ -9,13 +9,13 @@ eine gute Werbeplattform, die auch Feedback vom Kunden gibt.
 
 == Eingebundene Gems
 
-  * paperclip und paperclip-dropbox
-      Mit paperclip wurde die Funktion Bilderhochladen realisiert.
-      Die Bilder werden nicht wie sonst üblich im Projekt gespeichert, sondern
-      im Cloudspeicher von Dropbox. Dieser Schritt war nötig da Heroku in diesem Bereich
-      nur eingeschränkte Möglichkeiten bietet.
+* paperclip und paperclip-dropbox
+    Mit paperclip wurde die Funktion Bilderhochladen realisiert.
+    Die Bilder werden nicht wie sonst üblich im Projekt gespeichert, sondern
+    im Cloudspeicher von Dropbox. Dieser Schritt war nötig da Heroku in diesem Bereich
+    nur eingeschränkte Möglichkeiten bietet.
 
-  *
+*
 
 == Getting Started
 
