@@ -8,8 +8,6 @@ FactoryGirl.define do
     address "http://maps.google.de/"
     picture "MyString"
   end
-end
-FactoryGirl.define do
   factory :bar2 , class: 'Bar' do
   	id 2
     name "B"
@@ -17,4 +15,5 @@ FactoryGirl.define do
     address "http://maps.google.de/"
     picture "MyString"
   end
+
 end

@@ -6,26 +6,23 @@ FactoryGirl.define do
     user_name 'tester'
     text "MyText"
   end
-end
-
-FactoryGirl.define do
-  factory :comment2, class: 'Comment'do
+ 
+ factory :comment2, class: 'Comment'do
     bar_id 2
     user_name 'dummy'
     text "MyText"
   end
-end
-FactoryGirl.define do
-  factory :comment3, class: 'Comment' do
+
+   factory :comment3, class: 'Comment' do
     bar_id 1
     user_name 'testdude'
     text "MyText"
   end
-end
-FactoryGirl.define do
   factory :comment4, class: 'Comment' do
     bar_id 2
     user_name 'dieter'
     text "MyText"
   end
+
+
 end

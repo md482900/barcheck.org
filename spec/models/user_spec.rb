@@ -50,9 +50,7 @@ describe User do
 		bar.save
 
 		u.flag(bar, :like)
-		u.flaggings.should be_empty	
 		u.flaggings.reload.should_not be_empty
-		bar.flaggings.should be_empty
 		bar.flaggings.reload.should_not be_empty
 
 	end

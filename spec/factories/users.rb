@@ -8,9 +8,7 @@ FactoryGirl.define do
 		password '1234567'
 		password_confirmation '1234567'
 	end
-end
 
-FactoryGirl.define do
 	factory :user2, class: 'User' do
 		id 2
 		email 'dummy@tester.de'
@@ -18,8 +16,7 @@ FactoryGirl.define do
 		password '1234567'
 		password_confirmation '1234567'
 	end
-end
-FactoryGirl.define do
+
 	factory :user3, class: 'User' do
 		id 3
 		email 'test@dude.de'
@@ -27,8 +24,7 @@ FactoryGirl.define do
 		password '1234567'
 		password_confirmation '1234567'
 	end
-end
-FactoryGirl.define do
+
 	factory :user4, class: 'User' do
 		id 4
 		email 'dieter@tester.de'
