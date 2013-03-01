@@ -30,35 +30,35 @@ en:
       signed_in: "Du hast dich erfolgreich angemeldet."
       signed_out: "Auf wiedersehen, Du bist jetzt abgemeldet."
     passwords:
-      send_instructions: "Eine E-Mail ist zu Dir unterwegs, mit der Du Deine Registrierung bestätigen kannst."
+      #send_instructions: "Vielen Dank für die Registrierung."
       updated: "Du hast Dein Passwort soeben geändert. Du bist nun angemeldet."
       updated_not_active: "Du hast Dein Passwort geändert."
-      send_paranoid_instructions: "Eine E-Mail zum Ändern Deines Passworts ist schon unterwegs."
+      #send_paranoid_instructions: "Eine E-Mail zum Ändern Deines Passworts ist schon unterwegs."
       no_token: "Dieser Link zum Ändern Deines Passworts ist ungültig. Es fehlt ein Sicherheitsschlüssel."
       blank: "FALSCH"
       confirmations:
       send_instructions: "Vielen Dank für deine Registrierung."
-      send_paranoid_instructions: "Eine E-Mail ist schon unterwegs, mit der Du Deine Registrierung bestätigen kannst."
+      #send_paranoid_instructions: "Eine E-Mail ist schon unterwegs, mit der Du Deine Registrierung bestätigen kannst."
       confirmed: "Vielen Dank für die Deine Registrierung. Du bist nun angemeldet."
     registrations:
-      signed_up: "Vielen Dank. Eine E-Mail ist zu Dir unterwegs, mit der Du Deine Registrierung bestätigen kannst."
-      signed_up_but_unconfirmed: "Du musst erst deine Registrierung bestätigen durch den Link in unserem Email."
-      signed_up_but_inactive: "Dein Account ist inaktiv. Bitte klicke unterhalb um ein Bestätigungsemail anzufordern."
-      signed_up_but_locked: "Dein Account ist gesperrt. Bitte klicke unterhalb um deinen Account zu entsperren."
+      signed_up: "Vielen Dank für deine Registrierung."
+      #signed_up_but_unconfirmed: "Du musst erst deine Registrierung bestätigen durch den Link in unserem Email."
+      #signed_up_but_inactive: "Dein Account ist inaktiv. Bitte klicke unterhalb um ein Bestätigungsemail anzufordern."
+     # signed_up_but_locked: "Dein Account ist gesperrt. Bitte klicke unterhalb um deinen Account zu entsperren."
       updated: "Danke, dass Du Deine Daten aktuell hältst."
-      update_needs_confirmation: "Vielen Dank. Eine E-Mail ist zu Dir unterwegs, mit der Du Deine Änderungen bestätigen kannst."
+      #update_needs_confirmation: "Vielen Dank. Eine E-Mail ist zu Dir unterwegs, mit der Du Deine Änderungen bestätigen kannst."
       destroyed: "Schade, Du hast Dein Nutzerkonto gelöscht. Mach's gut und vielleicht bis bald."
     unlocks:
-      send_instructions: "Eine E-Mail mit Freischalt-Infos ist zu Dir unterwegs."
+      #send_instructions: "Eine E-Mail mit Freischalt-Infos ist zu Dir unterwegs."
       unlocked: "Du hast Dein Nutzerkonto soeben freigeschaltet. Du bist nun angemeldet."
-      send_paranoid_instructions: "Eine E-Mail mit Freischalt-Infos ist schon unterwegs."
+      #send_paranoid_instructions: "Eine E-Mail mit Freischalt-Infos ist schon unterwegs."
     omniauth_callbacks:
       success: "Du hast Dich erfolgreich per %{kind} angemeldet."
       failure: 'Die Anmeldung per %{kind} hat leider nicht geklappt: "%{reason}"'
     mailer:
-      confirmation_instructions:
-        subject: "Registrierung bestätigen"
-      reset_password_instructions:
-        subject: "Passwort ändern"
-      unlock_instructions:
-        subject: "Nutzerkonto freischalten"
+      #confirmation_instructions:
+       # subject: "Registrierung bestätigen"
+      #reset_password_instructions:
+        #subject: "Passwort ändern"
+      #unlock_instructions:
+        #subject: "Nutzerkonto freischalten"

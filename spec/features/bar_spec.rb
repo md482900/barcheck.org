@@ -21,6 +21,7 @@ describe 'create Bar' do
 		page.should have_content 'Test Bar'
 	end
 
+	
 
 
 
