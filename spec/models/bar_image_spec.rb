@@ -7,7 +7,7 @@ describe BarImage do
 	end
 
 	it 'should be valid' do
-		x =BarImage.new :photo => File.new(Rails.root + 'spec/fixtures/images/rails.png')
+		x =BarImage.new :photo => Rails.root.join("app/images/rails.png").open
 		x.should be_valid
 	end
 
