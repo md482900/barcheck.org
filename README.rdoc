@@ -11,29 +11,29 @@ Barcheck ist eine Webanwendung für Barbetreiber und Leute die das Nachtleben li
 == Eingebundene Gems
   
 * devise
-  Ermöglicht eine schnelle und flexible Benutzerauthentifizierung zu erstellen.
+    Ermöglicht eine schnelle und flexible Benutzerauthentifizierung zu erstellen.
   
 * ransack
-  Mit ransack wurde die Suchen-Funktion erstellt. Wir haben uns für ransack   entschieden, da es sich auch leicht auf komplexere Suchanfragen eignet.
+    Mit ransack wurde die Suchen-Funktion erstellt. Wir haben uns für ransack   entschieden, da es sich auch leicht auf komplexere Suchanfragen eignet.
 
 * rolify
-  Ermöglicht einfache Rollenverteilung unter den Benutzern.
+    Ermöglicht einfache Rollenverteilung unter den Benutzern.
   
 * activeadmin
-  Durch dieses Gem wird die Administration für Barcheck realisiert. Es bietet ein Backend mit einer Übersicht über fast alle hinterlegten Daten. Es ist das Administrations Framework für RoR.
+    Durch dieses Gem wird die Administration für Barcheck realisiert. Es bietet ein Backend mit einer Übersicht über fast alle hinterlegten Daten. Es ist das Administrations Framework für RoR.
   
 * cancan
-  Ermöglicht Rechte und Aktionen bestimmten Rollen zuzuweisen
+    Ermöglicht Rechte und Aktionen bestimmten Rollen zuzuweisen
   
-*letsrate
-  Hiermit wurde die Bewerten-Funktion erstellt. 
+* letsrate
+    Hiermit wurde die Bewerten-Funktion erstellt. 
   
-*make_flaggable
-  Wurde Benutzt um den Like-Button zu erstellen.
+* make_flaggable
+    Wurde Benutzt um den Like-Button zu erstellen.
   
 * paperclip und paperclip-dropbox 
-  Mit paperclip wurde die Funktion Bilderhochladen realisiert.
-  Die Bilder werden nicht wie sonst üblich im Projekt gespeichert, sondern im Cloudspeicher von Dropbox. Dieser Schritt war nötig da Heroku in diesem Bereich nur eingeschränkte Möglichkeiten bietet.
+    Mit paperclip wurde die Funktion Bilderhochladen realisiert.
+    Die Bilder werden nicht wie sonst üblich im Projekt gespeichert, sondern im Cloudspeicher von Dropbox. Dieser Schritt war nötig da Heroku in diesem Bereich nur eingeschränkte Möglichkeiten bietet.
 
 
 ==Example
