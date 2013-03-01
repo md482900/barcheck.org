@@ -44,6 +44,7 @@ https://maps.google.de/maps?q=google+maps+cubabar ... usw.
 * Da wir die Bilder im Cloudspeicher von Dropbox speichern, ist die Performance nicht überragend, sowohl beim speichern als auch beim abrufen der Bilder.
 
 * letsrate Bewertungen werden nicht gespeichert, da das Gem seit kurzem Probleme macht. Ersteller des Gem hat noch kein Fix geliefert. Siehe http://letsrate.herokuapp.com/ einloggen und neusten Eintrag bewerten und Seite neuladen. Bewertung wird nicht gespeichert.
+* Indexseite kann direkt zu Bar erstellen leiten wenn eine Bar gelöscht wird Beispiel wenn  1,2,[fehlt],4 und Bilder von 3 aufgerufen werden.
 
 == Eingebundene Gems
   
