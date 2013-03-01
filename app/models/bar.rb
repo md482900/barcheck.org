@@ -2,7 +2,7 @@ class Bar < ActiveRecord::Base
   attr_accessible :address, :description, :name, :bar_images_attributes
   validates :address, 
   		      :presence =>{:message => "Die Adresse bitte von Google Maps kopieren"},
-  			    format: %r|^http(s?)://maps.google.de/|
+  			    format: %r|^http(s?)://maps.google.|
 
 
   validates :name, 
