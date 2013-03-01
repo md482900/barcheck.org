@@ -3,15 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
-group :development, :test do
- 	#gem 'sqlite3'
-	gem 'rspec-rails'
-	gem 'factory_girl_rails'
-	gem 'guard-rspec'
-	gem 'faker'
-  	gem 'pry'
-	gem 'web-app-theme', '>=0.6.2'
   gem 'rails', '3.2.12'
   gem 'haml-rails'
   gem 'jquery-rails'
@@ -26,7 +17,18 @@ group :development, :test do
   gem 'paperclip-dropbox'
   gem 'dropbox'
   gem 'letsrate'
-  
+  gem 'web-app-theme', '>=0.6.2'
+  gem 'heroku'
+
+
+group :development, :test do
+ 	gem 'sqlite3'
+	gem 'rspec-rails'
+	gem 'factory_girl_rails'
+	gem 'guard-rspec'
+	gem 'faker'
+  gem 'pry'
+	
   #used to create Like
   gem 'make_flaggable', :git => 'git://github.com/cavneb/make_flaggable.git'
  
@@ -35,9 +37,9 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 
-group :production do
-  gem 'pg'
-end
+#group :production do
+ # gem 'pg'
+#end
 
 
 group :assets do
